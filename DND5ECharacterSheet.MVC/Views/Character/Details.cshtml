@@ -1,0 +1,98 @@
+﻿@model DND5ECharacterSheet.Models.CharacterDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CharacterDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AddedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Race)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Race)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExperiencePoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExperiencePoints)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspiration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inspiration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxHP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxHP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentHitPoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentHitPoints)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TemporaryHitPoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TemporaryHitPoints)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
