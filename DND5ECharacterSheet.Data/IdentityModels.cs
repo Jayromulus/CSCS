@@ -26,6 +26,7 @@ namespace DND5ECharacterSheet.Data
         }
 
         public DbSet<Character> Characters { get; set; }
+        public DbSet<ClassSelection> Classes { get; set; }
 
         public static ApplicationDbContext Create()
         {
