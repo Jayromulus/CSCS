@@ -63,6 +63,7 @@
     <Compile Include="Items\Armour.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaceSelection.cs" />
     <Compile Include="SkillSet.cs" />
@@ -71,9 +72,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
