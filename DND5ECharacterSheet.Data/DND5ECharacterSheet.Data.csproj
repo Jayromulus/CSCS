@@ -63,9 +63,9 @@
     <Compile Include="Items\Armour.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
-    <Compile Include="Migrations\202004022222373_MakeItStop.cs" />
-    <Compile Include="Migrations\202004022222373_MakeItStop.designer.cs">
-      <DependentUpon>202004022222373_MakeItStop.cs</DependentUpon>
+    <Compile Include="Migrations\202004022243445_GithubIsWack.cs" />
+    <Compile Include="Migrations\202004022243445_GithubIsWack.designer.cs">
+      <DependentUpon>202004022243445_GithubIsWack.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +77,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004022222373_MakeItStop.resx">
-      <DependentUpon>202004022222373_MakeItStop.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004022243445_GithubIsWack.resx">
+      <DependentUpon>202004022243445_GithubIsWack.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
