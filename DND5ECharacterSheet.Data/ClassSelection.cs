@@ -43,7 +43,7 @@ namespace DND5ECharacterSheet.Data
         [Key]
         public int PresetProficiencyId { get; set; }
         public ClassProficiencies() {}
-        public ClassProficiencies(bool str, bool dex, bool con, bool sma, bool wis, bool cha, bool la, bool ma, bool ha, bool sw, bool mw, bool acro, bool anim, bool arc, bool ath, bool dec, bool his, bool ins, bool scare, bool invest, bool med, bool nat, bool perc, bool perf, bool pers, bool rel, bool soh, bool ste, bool sur)
+        public ClassProficiencies(bool str, bool dex, bool con, bool sma, bool wis, bool cha, bool la, bool ma, bool ha, bool sh, bool sw, bool mw, bool acro, bool anim, bool arc, bool ath, bool dec, bool his, bool ins, bool scare, bool invest, bool med, bool nat, bool perc, bool perf, bool pers, bool rel, bool soh, bool ste, bool sur)
         {
             StrengthSave = str;
             DexteritySave = dex;
@@ -54,6 +54,7 @@ namespace DND5ECharacterSheet.Data
             LightArmour = la;
             MediumArmour = ma;
             HeavyArmour = ha;
+            Shield = sh;
             SimpleWeapons = sw;
             MartialWeapons = mw;
             Acrobatics = acro;
@@ -86,6 +87,7 @@ namespace DND5ECharacterSheet.Data
         public bool LightArmour { get; set; }
         public bool MediumArmour { get; set; }
         public bool HeavyArmour { get; set; }
+        public bool Shield { get; set; }
 
         public bool SimpleWeapons { get; set; }
         public bool MartialWeapons { get; set; }

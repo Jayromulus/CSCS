@@ -11,13 +11,13 @@ namespace DND5ECharacterSheet.Data
     public class Character
     {
         public Character() { }
-        public Character (string userId, string charName, string classChoice, string raceChoice, int exp, int inspiration, int maxhp)
+        public Character (string userId, string charName, int classChoice, string raceChoice, int exp, int inspiration, int maxhp)
         {
             AddedBy = userId;
             CreatedOn = DateTime.Now;
             ModifiedOn = DateTime.Now;
             CharacterName = charName;
-            Class = classChoice;
+            ClassId = classChoice;
             Race = raceChoice;
             ExperiencePoints = exp;
             Inspiration = inspiration;
@@ -39,11 +39,11 @@ namespace DND5ECharacterSheet.Data
         public string CharacterName { get; set; }
 
 
-        //[ForeignKey(nameof(Class))]
-        //public int ClassId { get; set; }
-        //public ClassSelection Class { get; set; }
+        [ForeignKey(nameof(Class))]
+        public int ClassId { get; set; }
+        public virtual ClassSelection Class { get; set; }
 
-        public string Class { get; set; }
+        //public string Class { get; set; }
 
         //[Required]
         //[ForeignKey(nameof(Race))]

@@ -23,7 +23,7 @@ namespace DND5ECharacterSheet.Services
         // CREATE
         public async Task<bool> CreateCharacterAsync(CharacterCreate model)
         {
-            Character entity = new Character(_userId, model.CharacterName, model.ClassSelect, model.RaceSelect, model.Experience, model.Inspiration, model.MaxHP);
+            Character entity = new Character(_userId, model.CharacterName, model.ClassId, model.RaceSelect, model.Experience, model.Inspiration, model.MaxHP);
             _context.Characters.Add(entity);
             return await _context.SaveChangesAsync() == 1;
         }
@@ -33,11 +33,11 @@ namespace DND5ECharacterSheet.Services
         {
             var entityList = await _context.Characters.ToListAsync();
             // .Where(entity => entity.User.Id == _userId)
-            var characterList = entityList.Select(myChar => new CharacterListItem
+            var characterList = entityList.Select(myChar => new CharacterListItem()
             {
                 CharacterId = myChar.Id,
                 CharacterName = myChar.CharacterName,
-                Class = myChar.Class,
+                ClassName = myChar.Class.ClassName,
                 Race = myChar.Race,
                 Level = myChar.Level
             }).ToList();
@@ -65,9 +65,11 @@ namespace DND5ECharacterSheet.Services
                     User = entity.User,
                     AddedBy = entity.User.UserName,
                     CharacterName = entity.CharacterName,
+                    ClassId = entity.ClassId,
                     Class = entity.Class,
                     Race = entity.Race,
                     Level = entity.Level,
+                    ExperiencePoints = entity.ExperiencePoints,
                     Inspiration = entity.Inspiration,
                     MaxHP = entity.MaxHitPoints,
                     CurrentHitPoints = entity.CurrentHitPoints,
@@ -88,7 +90,7 @@ namespace DND5ECharacterSheet.Services
                 {
 
                     entity.CharacterName = model.CharacterName;
-                    entity.Class = model.Class;
+                    entity.ClassId = model.ClassId;
                     entity.Race = model.Race;
                     entity.ExperiencePoints = model.ExperiencePoints;
                     entity.Inspiration = model.Inspiration;

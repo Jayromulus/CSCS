@@ -12,7 +12,7 @@ namespace DND5ECharacterSheet.Models
         [Required]
         public string CharacterName { get; set; }
         [Required]
-        public string ClassSelect { get; set; }
+        public int ClassId { get; set; }
         [Required]
         public string RaceSelect { get; set; }
         [Required]
@@ -29,7 +29,7 @@ namespace DND5ECharacterSheet.Models
         public string CharacterName { get; set; }
         //public virtual ClassSelection Class { get; set; }
         //public virtual RaceSelection Race { get; set; }
-        public string Class { get; set; }
+        public string ClassName { get; set; }
         public string Race { get; set; }
         public int Level { get; set; }
     }
@@ -39,7 +39,7 @@ namespace DND5ECharacterSheet.Models
         public int Id { get; set; }
         public virtual ApplicationUser User { get; set; }
         public string CharacterName { get; set; }
-        public string Class { get; set; }
+        public int ClassId { get; set; }
         public string Race { get; set; }
         public int ExperiencePoints { get; set; }
         public int Inspiration { get; set; }
@@ -54,7 +54,8 @@ namespace DND5ECharacterSheet.Models
         public virtual ApplicationUser User { get; set; }
         public string AddedBy { get; set; }
         public string CharacterName { get; set; }
-        public string Class { get; set; }
+        public int ClassId { get; set; }
+        public virtual ClassSelection Class { get; set; }
         public string Race { get; set; }
         public int ExperiencePoints { get; set; }
         public int Level { get; set; }
