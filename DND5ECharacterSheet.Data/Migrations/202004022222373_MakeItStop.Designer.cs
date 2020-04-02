@@ -7,13 +7,13 @@ namespace DND5ECharacterSheet.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class MigrateToFixFrontEnd : IMigrationMetadata
+    public sealed partial class MakeItStop : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrateToFixFrontEnd));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MakeItStop));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004012114176_MigrateToFixFrontEnd"; }
+            get { return "202004022222373_MakeItStop"; }
         }
         
         string IMigrationMetadata.Source

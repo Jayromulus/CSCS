@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+DND5ECharacterSheet.MVC/App_Data/DND5ECharacterSheet

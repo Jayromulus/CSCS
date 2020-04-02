@@ -23,6 +23,7 @@ namespace DND5ECharacterSheet.Data
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Class")]
         public string ClassName { get; set; }
 
         [Required]

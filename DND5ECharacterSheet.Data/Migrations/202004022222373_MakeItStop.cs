@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialSeed : DbMigration
+    public partial class MakeItStop : DbMigration
     {
         public override void Up()
         {
@@ -16,7 +16,7 @@
                         ModifiedOn = c.DateTime(nullable: false),
                         AddedBy = c.String(nullable: false, maxLength: 128),
                         CharacterName = c.String(nullable: false),
-                        Class = c.String(),
+                        ClassId = c.Int(nullable: false),
                         Race = c.String(),
                         ExperiencePoints = c.Int(nullable: false),
                         Inspiration = c.Int(nullable: false),
@@ -25,8 +25,63 @@
                         TemporaryHitPoints = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.ClassSelections", t => t.ClassId, cascadeDelete: true)
                 .ForeignKey("dbo.AspNetUsers", t => t.AddedBy, cascadeDelete: true)
-                .Index(t => t.AddedBy);
+                .Index(t => t.AddedBy)
+                .Index(t => t.ClassId);
+            
+            CreateTable(
+                "dbo.ClassSelections",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ClassName = c.String(nullable: false),
+                        Description = c.String(nullable: false),
+                        HitDieSize = c.Int(nullable: false),
+                        PrimaryAbility = c.String(nullable: false),
+                        Proficiencies_PresetProficiencyId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.ClassProficiencies", t => t.Proficiencies_PresetProficiencyId, cascadeDelete: true)
+                .Index(t => t.Proficiencies_PresetProficiencyId);
+            
+            CreateTable(
+                "dbo.ClassProficiencies",
+                c => new
+                    {
+                        PresetProficiencyId = c.Int(nullable: false, identity: true),
+                        StrengthSave = c.Boolean(nullable: false),
+                        DexteritySave = c.Boolean(nullable: false),
+                        ConstitutionSave = c.Boolean(nullable: false),
+                        IntelligenceSave = c.Boolean(nullable: false),
+                        WisdomSave = c.Boolean(nullable: false),
+                        CharismaSave = c.Boolean(nullable: false),
+                        LightArmour = c.Boolean(nullable: false),
+                        MediumArmour = c.Boolean(nullable: false),
+                        HeavyArmour = c.Boolean(nullable: false),
+                        Shield = c.Boolean(nullable: false),
+                        SimpleWeapons = c.Boolean(nullable: false),
+                        MartialWeapons = c.Boolean(nullable: false),
+                        Acrobatics = c.Boolean(nullable: false),
+                        AnimalHandling = c.Boolean(nullable: false),
+                        Arcana = c.Boolean(nullable: false),
+                        Athletics = c.Boolean(nullable: false),
+                        Deception = c.Boolean(nullable: false),
+                        History = c.Boolean(nullable: false),
+                        Insight = c.Boolean(nullable: false),
+                        Intimidation = c.Boolean(nullable: false),
+                        Investigation = c.Boolean(nullable: false),
+                        Medicine = c.Boolean(nullable: false),
+                        Nature = c.Boolean(nullable: false),
+                        Perception = c.Boolean(nullable: false),
+                        Performance = c.Boolean(nullable: false),
+                        Persuasion = c.Boolean(nullable: false),
+                        Religion = c.Boolean(nullable: false),
+                        SleightOfHand = c.Boolean(nullable: false),
+                        Stealth = c.Boolean(nullable: false),
+                        Survival = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.PresetProficiencyId);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -87,57 +142,40 @@
                 .Index(t => t.RoleId);
             
             CreateTable(
-                "dbo.ClassSelections",
+                "dbo.RaceSelections",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        ClassName = c.String(nullable: false),
-                        Description = c.String(nullable: false),
-                        HitDieSize = c.Int(nullable: false),
-                        PrimaryAbility = c.String(nullable: false),
-                        Proficiencies_PresetProficiencyId = c.Int(nullable: false),
+                        RaceName = c.String(nullable: false),
+                        AgeRange = c.String(),
+                        Alignment = c.String(),
+                        Speed = c.Int(nullable: false),
+                        LowLightVision = c.Boolean(nullable: false),
+                        LowLightRange = c.Int(),
+                        DarkVision = c.Boolean(nullable: false),
+                        DarkVisionRange = c.Int(),
+                        ExtraSkillProficiencies = c.String(),
+                        ExtraRacialAbilities = c.String(),
+                        Languages = c.String(),
+                        AbilityIncreases_IncreaseId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ClassProficiencies", t => t.Proficiencies_PresetProficiencyId, cascadeDelete: true)
-                .Index(t => t.Proficiencies_PresetProficiencyId);
+                .ForeignKey("dbo.AbilityIncreases", t => t.AbilityIncreases_IncreaseId, cascadeDelete: true)
+                .Index(t => t.AbilityIncreases_IncreaseId);
             
             CreateTable(
-                "dbo.ClassProficiencies",
+                "dbo.AbilityIncreases",
                 c => new
                     {
-                        PresetProficiencyId = c.Int(nullable: false, identity: true),
-                        StrengthSave = c.Boolean(nullable: false),
-                        DexteritySave = c.Boolean(nullable: false),
-                        ConstitutionSave = c.Boolean(nullable: false),
-                        IntelligenceSave = c.Boolean(nullable: false),
-                        WisdomSave = c.Boolean(nullable: false),
-                        CharismaSave = c.Boolean(nullable: false),
-                        LightArmour = c.Boolean(nullable: false),
-                        MediumArmour = c.Boolean(nullable: false),
-                        HeavyArmour = c.Boolean(nullable: false),
-                        Shield = c.Boolean(nullable: false),
-                        SimpleWeapons = c.Boolean(nullable: false),
-                        MartialWeapons = c.Boolean(nullable: false),
-                        Acrobatics = c.Boolean(nullable: false),
-                        AnimalHandling = c.Boolean(nullable: false),
-                        Arcana = c.Boolean(nullable: false),
-                        Athletics = c.Boolean(nullable: false),
-                        Deception = c.Boolean(nullable: false),
-                        History = c.Boolean(nullable: false),
-                        Insight = c.Boolean(nullable: false),
-                        Intimidation = c.Boolean(nullable: false),
-                        Investigation = c.Boolean(nullable: false),
-                        Medicine = c.Boolean(nullable: false),
-                        Nature = c.Boolean(nullable: false),
-                        Perception = c.Boolean(nullable: false),
-                        Performance = c.Boolean(nullable: false),
-                        Persuasion = c.Boolean(nullable: false),
-                        Religion = c.Boolean(nullable: false),
-                        SleightOfHand = c.Boolean(nullable: false),
-                        Stealth = c.Boolean(nullable: false),
-                        Survival = c.Boolean(nullable: false),
+                        IncreaseId = c.Int(nullable: false, identity: true),
+                        Strength = c.Int(),
+                        Dexterity = c.Int(),
+                        Constitution = c.Int(),
+                        Intelligence = c.Int(),
+                        Wisdom = c.Int(),
+                        Charisma = c.Int(),
                     })
-                .PrimaryKey(t => t.PresetProficiencyId);
+                .PrimaryKey(t => t.IncreaseId);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -154,26 +192,32 @@
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.ClassSelections", "Proficiencies_PresetProficiencyId", "dbo.ClassProficiencies");
+            DropForeignKey("dbo.RaceSelections", "AbilityIncreases_IncreaseId", "dbo.AbilityIncreases");
             DropForeignKey("dbo.Characters", "AddedBy", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Characters", "ClassId", "dbo.ClassSelections");
+            DropForeignKey("dbo.ClassSelections", "Proficiencies_PresetProficiencyId", "dbo.ClassProficiencies");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.ClassSelections", new[] { "Proficiencies_PresetProficiencyId" });
+            DropIndex("dbo.RaceSelections", new[] { "AbilityIncreases_IncreaseId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.ClassSelections", new[] { "Proficiencies_PresetProficiencyId" });
+            DropIndex("dbo.Characters", new[] { "ClassId" });
             DropIndex("dbo.Characters", new[] { "AddedBy" });
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.ClassProficiencies");
-            DropTable("dbo.ClassSelections");
+            DropTable("dbo.AbilityIncreases");
+            DropTable("dbo.RaceSelections");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.ClassProficiencies");
+            DropTable("dbo.ClassSelections");
             DropTable("dbo.Characters");
         }
     }
