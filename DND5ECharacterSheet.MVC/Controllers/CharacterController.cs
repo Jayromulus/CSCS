@@ -59,7 +59,7 @@ namespace DND5ECharacterSheet.MVC.Controllers
                 User = single.User,
                 CharacterName = single.CharacterName,
                 ClassId = single.ClassId,
-                Race = single.Race,
+                RaceId = single.RaceId,
                 ExperiencePoints = single.ExperiencePoints,
                 Inspiration = single.Inspiration,
                 CurrentHitPoints = single.CurrentHitPoints,

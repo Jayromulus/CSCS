@@ -23,7 +23,7 @@ namespace DND5ECharacterSheet.Services
         // CREATE
         public async Task<bool> CreateCharacterAsync(CharacterCreate model)
         {
-            Character entity = new Character(_userId, model.CharacterName, model.ClassId, model.RaceSelect, model.Experience, model.Inspiration, model.MaxHP);
+            Character entity = new Character(_userId, model.CharacterName, model.ClassId, model.RaceId, model.Experience, model.Inspiration, model.MaxHP);
             _context.Characters.Add(entity);
             return await _context.SaveChangesAsync() == 1;
         }
@@ -38,7 +38,7 @@ namespace DND5ECharacterSheet.Services
                 CharacterId = myChar.Id,
                 CharacterName = myChar.CharacterName,
                 ClassName = myChar.Class.ClassName,
-                Race = myChar.Race,
+                RaceName = myChar.Race.RaceName,
                 Level = myChar.Level
             }).ToList();
 
@@ -67,6 +67,7 @@ namespace DND5ECharacterSheet.Services
                     CharacterName = entity.CharacterName,
                     ClassId = entity.ClassId,
                     Class = entity.Class,
+                    RaceId = entity.RaceId,
                     Race = entity.Race,
                     Level = entity.Level,
                     ExperiencePoints = entity.ExperiencePoints,
@@ -91,7 +92,7 @@ namespace DND5ECharacterSheet.Services
 
                     entity.CharacterName = model.CharacterName;
                     entity.ClassId = model.ClassId;
-                    entity.Race = model.Race;
+                    entity.RaceId = model.RaceId;
                     entity.ExperiencePoints = model.ExperiencePoints;
                     entity.Inspiration = model.Inspiration;
                     entity.CurrentHitPoints = model.CurrentHitPoints;
