@@ -39,7 +39,6 @@
                     "50 - 350", // AGE RANGE
                     'M', // SIZE
                     25, // SPEED
-                    null, // DRAGONBORN COLOR
                     false, // LOWLIGHT BOOLEAN
                     null, // LOWLIGHT RANGE
                     true, // DARKVISION BOOLEAN
@@ -48,28 +47,28 @@
                     "Dwarven Resilience, Stonecunning, Dwarven Toughness", // EXTRA SKILLS
                     "Dwarven, Common" // LANGUAGES
                 ),
-                new RaceSelection("Mountain Dwarf", new AbilityIncrease(2, 0, 2, 0, 0, 0), "50 - 350", 'M', 25, null, false, null, true, 60, "Battleaxe, Handaxe, Throwing Hammer, Warhammer, Light Armour, Medium Armour, Smith's Tools, Brewer's Tools, Mason's Tools", "Dwarven Resilience, Stonecunning", "Dwarven, Common"),
-                new RaceSelection("High Elf", new AbilityIncrease(0, 2, 0, 1, 0, 0), "100 - 750", 'M', 35, null, false, null, true, 60, "Perception, Longsword, Shortsword, Longbow, Shortbow", "Fey Ancestry, Trance, Cantrip, Extra Language", "languagas"),
-                new RaceSelection("Wood Elf", new AbilityIncrease(0, 2, 0, 0, 1, 0), "100 - 750", 'M', 30, null, false, null, true, 60, "Perception, Longsword, Shortsword, Longbow, Shortbow", "Fey Ancestry, Trance, Mask of the Wild", "languagas"),
-                new RaceSelection("Dark Elf", new AbilityIncrease(0, 2, 0, 0, 0, 1), "100 - 750", 'M', 30, null, false, null, true, 120, "Perception, Rapier, Shortsword, Hand Crossbow", "Fey Ancestry, Trance, Sunlight Sensitivity, Drow Magic", "Common, Elvish"),
-                new RaceSelection("Lightfoot Halfling", new AbilityIncrease(0, 2, 0, 0, 0, 1), "20-150", 'S', 25, null, false, null, false, null, "No Bonus Proficiencies", "Lucky, Brave, Halfling Nimbleness, Naturally Stealthy", "Common, Halfling"),
-                new RaceSelection("Stout Halfling", new AbilityIncrease(0, 2, 1, 0, 0, 0), "20-150", 'S', 25, null, false, null, false, null, "No Bonus Proficiencies", "Lucky, Brave, Halfling Nimbleness, Stout Resilience", "Common, Halfling"),
-                new RaceSelection("Human", new AbilityIncrease(1, 1, 1, 1, 1, 1), "18-80", 'M', 30, null, false, null, false, null, "1 Language of your choice", "No Bonus Abilities", "Common"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Black", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Acid], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Blue", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Lightning], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Brass", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Fire], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Bronze", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Lightning], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Copper", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Acid], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Gold", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Dex. save) [Fire], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Green", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Con. save) [Poison], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Red", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Dex. save) [Fire], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Silver", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Con. save) [Cold], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "White", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Con. save) [Cold], Damage Resistance", "Common, Draconic"),
-                new RaceSelection("Forest Gnome", new AbilityIncrease(0, 1, 0, 2, 0, 0), "40 - 450", 'S', 25, null, false, null, true, 60, "Artisan's Tools", "Gnome Cunning, Artificer's Lore, Tinker", "Common, Gnomish"),
-                new RaceSelection("Rock Gnome", new AbilityIncrease(0, 0, 1, 2, 0, 0), "40 - 450", 'S', 25, null, false, null, true, 60, "No Bonus Proficiencies", "Gnome Cunning, Natural Illusionist, Speak with Small Beasts", "Common, Gnomish"),
-                new RaceSelection("Half-Elf", new AbilityIncrease(0, 0, 0, 0, 0, 2), "20 - 180", 'M', 30, null, false, null, true, 60, "2 Skills of your choice", "+1 to 2 Ability Scores, Fey Ancestry", "Common, Elvish"),
-                new RaceSelection("Half-Orc", new AbilityIncrease(2, 0, 1, 0, 0, 0), "14 - 70", 'M', 30, null, false, null, true, 60, "Intimidation", "Relentless Endurance, Savage Attacks", "Common, Orc"),
-                new RaceSelection("Tiefling", new AbilityIncrease(0, 0, 0, 1, 0, 2), "18 - 85", 'M', 30, null, false, null, true, 60, "No Bonus Proficiencies", "Hellish Resistance, Infernal Legacy", "Common, Infernal")
+                new RaceSelection("Mountain Dwarf", new AbilityIncrease(2, 0, 2, 0, 0, 0), "50 - 350", 'M', 25, false, null, true, 60, "Battleaxe, Handaxe, Throwing Hammer, Warhammer, Light Armour, Medium Armour, Smith's Tools, Brewer's Tools, Mason's Tools", "Dwarven Resilience, Stonecunning", "Dwarven, Common"),
+                new RaceSelection("High Elf", new AbilityIncrease(0, 2, 0, 1, 0, 0), "100 - 750", 'M', 35, false, null, true, 60, "Perception, Longsword, Shortsword, Longbow, Shortbow", "Fey Ancestry, Trance, Cantrip, Extra Language", "Common, Elvish"),
+                new RaceSelection("Wood Elf", new AbilityIncrease(0, 2, 0, 0, 1, 0), "100 - 750", 'M', 30, false, null, true, 60, "Perception, Longsword, Shortsword, Longbow, Shortbow", "Fey Ancestry, Trance, Mask of the Wild", "Common, Elvish"),
+                new RaceSelection("Dark Elf", new AbilityIncrease(0, 2, 0, 0, 0, 1), "100 - 750", 'M', 30, false, null, true, 120, "Perception, Rapier, Shortsword, Hand Crossbow", "Fey Ancestry, Trance, Sunlight Sensitivity, Drow Magic", "Common, Elvish"),
+                new RaceSelection("Lightfoot Halfling", new AbilityIncrease(0, 2, 0, 0, 0, 1), "20-150", 'S', 25, false, null, false, null, "No Bonus Proficiencies", "Lucky, Brave, Halfling Nimbleness, Naturally Stealthy", "Common, Halfling"),
+                new RaceSelection("Stout Halfling", new AbilityIncrease(0, 2, 1, 0, 0, 0), "20-150", 'S', 25, false, null, false, null, "No Bonus Proficiencies", "Lucky, Brave, Halfling Nimbleness, Stout Resilience", "Common, Halfling"),
+                new RaceSelection("Human", new AbilityIncrease(1, 1, 1, 1, 1, 1), "18-80", 'M', 30, false, null, false, null, "1 Language of your choice", "No Bonus Abilities", "Common"),
+                new RaceSelection("Black Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Acid], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Blue Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Lightning], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Brass Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Fire], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Bronze Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Lightning], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Copper Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Acid], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Gold Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Dex. save) [Fire], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Green Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Con. save) [Poison], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Red Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Dex. save) [Fire], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Silver Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Con. save) [Cold], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("White Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Con. save) [Cold], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Forest Gnome", new AbilityIncrease(0, 1, 0, 2, 0, 0), "40 - 450", 'S', 25, false, null, true, 60, "Artisan's Tools", "Gnome Cunning, Artificer's Lore, Tinker", "Common, Gnomish"),
+                new RaceSelection("Rock Gnome", new AbilityIncrease(0, 0, 1, 2, 0, 0), "40 - 450", 'S', 25, false, null, true, 60, "No Bonus Proficiencies", "Gnome Cunning, Natural Illusionist, Speak with Small Beasts", "Common, Gnomish"),
+                new RaceSelection("Half-Elf", new AbilityIncrease(0, 0, 0, 0, 0, 2), "20 - 180", 'M', 30, false, null, true, 60, "2 Skills of your choice", "+1 to 2 Ability Scores, Fey Ancestry", "Common, Elvish"),
+                new RaceSelection("Half-Orc", new AbilityIncrease(2, 0, 1, 0, 0, 0), "14 - 70", 'M', 30, false, null, true, 60, "Intimidation", "Relentless Endurance, Savage Attacks", "Common, Orc"),
+                new RaceSelection("Tiefling", new AbilityIncrease(0, 0, 0, 1, 0, 2), "18 - 85", 'M', 30, false, null, true, 60, "No Bonus Proficiencies", "Hellish Resistance, Infernal Legacy", "Common, Infernal")
             );
             context.SaveChanges();
             //  This method will be called after migrating to the latest version.

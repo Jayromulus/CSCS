@@ -11,14 +11,14 @@ namespace DND5ECharacterSheet.Data
     public class Character
     {
         public Character() { }
-        public Character (string userId, string charName, int classChoice, int raceChoice, int exp, int inspiration, int maxhp)
+        public Character (string userId, string charName, int classChoice, string raceChoice, int exp, int inspiration, int maxhp)
         {
             AddedBy = userId;
             CreatedOn = DateTime.Now;
             ModifiedOn = DateTime.Now;
             CharacterName = charName;
             ClassId = classChoice;
-            RaceId = raceChoice;
+            RaceName = raceChoice;
             ExperiencePoints = exp;
             Inspiration = inspiration;
             MaxHitPoints = maxhp;
@@ -47,7 +47,7 @@ namespace DND5ECharacterSheet.Data
 
         [Required]
         [ForeignKey(nameof(Race))]
-        public int RaceId { get; set; }
+        public string RaceName { get; set; }
         public virtual RaceSelection Race { get; set; }
 
         //public string Race { get; set; }
@@ -68,6 +68,7 @@ namespace DND5ECharacterSheet.Data
         public int CurrentHitPoints { get; set; }
         public int TemporaryHitPoints { get; set; }
 
-
     }
+
+    
 }

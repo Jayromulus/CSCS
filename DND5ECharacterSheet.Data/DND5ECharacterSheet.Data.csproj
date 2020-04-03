@@ -63,9 +63,17 @@
     <Compile Include="Items\Armour.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
-    <Compile Include="Migrations\202004030134431_DoneSeeding.cs" />
-    <Compile Include="Migrations\202004030134431_DoneSeeding.designer.cs">
-      <DependentUpon>202004030134431_DoneSeeding.cs</DependentUpon>
+    <Compile Include="Migrations\202004030641388_IHateDropdownMenusInRazorMVC.cs" />
+    <Compile Include="Migrations\202004030641388_IHateDropdownMenusInRazorMVC.designer.cs">
+      <DependentUpon>202004030641388_IHateDropdownMenusInRazorMVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.cs" />
+    <Compile Include="Migrations\202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.designer.cs">
+      <DependentUpon>202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004030647286_JustWorkPleaseMySnityBegsYou.cs" />
+    <Compile Include="Migrations\202004030647286_JustWorkPleaseMySnityBegsYou.designer.cs">
+      <DependentUpon>202004030647286_JustWorkPleaseMySnityBegsYou.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +84,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004030134431_DoneSeeding.resx">
-      <DependentUpon>202004030134431_DoneSeeding.cs</DependentUpon>
+    <Content Include="ConfigurationSeed.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202004030641388_IHateDropdownMenusInRazorMVC.resx">
+      <DependentUpon>202004030641388_IHateDropdownMenusInRazorMVC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.resx">
+      <DependentUpon>202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004030647286_JustWorkPleaseMySnityBegsYou.resx">
+      <DependentUpon>202004030647286_JustWorkPleaseMySnityBegsYou.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

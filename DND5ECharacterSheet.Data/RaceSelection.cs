@@ -10,14 +10,13 @@ namespace DND5ECharacterSheet.Data
     public class RaceSelection
     {
         public RaceSelection() { }
-        public RaceSelection(string name, AbilityIncrease abil, string age, char size, int speed, string color, bool lowlight, int? lowlightrange, bool dark, int? darkrange, string profs, string extra, string lang)
+        public RaceSelection(string name, AbilityIncrease abil, string age, char size, int speed, bool lowlight, int? lowlightrange, bool dark, int? darkrange, string profs, string extra, string lang)
         {
             RaceName = name;
             AbilityIncreases = abil;
             AgeRange = age;
             Size = size;
             Speed = speed;
-            DragonColor = color;
             LowLightVision = lowlight;
             LowLightRange = lowlightrange;
             DarkVision = dark;
@@ -28,7 +27,7 @@ namespace DND5ECharacterSheet.Data
         }
 
         [Key]
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
         [Required]
         [Display(Name = "Race")]
@@ -43,8 +42,6 @@ namespace DND5ECharacterSheet.Data
         public char Size { get; set; }
 
         public int Speed { get; set; }
-
-        public string DragonColor { get; set; }
 
         public bool LowLightVision { get; set; }
 

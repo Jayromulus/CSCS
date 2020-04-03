@@ -1,0 +1,67 @@
+﻿CONFIGURATION SEED METHOD
+
+protected override void Seed(DND5ECharacterSheet.Data.ApplicationDbContext context)
+        {
+            context.Classes.AddOrUpdate(
+                cl => cl.ClassName,
+                new ClassSelection("Barbarian", "A fierce warrior of primitive background who can enter a battle rage", 12, "Strength", new ClassProficiencies(true, false, true, false, false, false, true, true, false, true, true, true, false, true, false, true, false, false, false, true, false, false, true, true, false, false, false, false, false, true)),
+                new ClassSelection("Bard", "An inspiring magician whose power echoes the music of creation", 8, "Charisma", new ClassProficiencies(false, true, false, false, false, true, true, false, false, false, true, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true)),
+                new ClassSelection("Cleric", "A priestly champion who wields divine magic in service of a higher power", 8, "Wisdom", new ClassProficiencies(false, false, false, false, true, true, true, true, false, true, true, false, false, false, false, false, false, true, true, false, false, true, false, false, false, true, true, false, false, false)),
+                new ClassSelection("Druid", "A priest of the Old Faith, weilding the powers of nature - moonlight and plant growth, fire and lightnint - and adopting animal forms", 8, "Wisdom", new ClassProficiencies(false, false, false, true, true, false, false, true, true, true, true, true, false, true, true, false, false, false, true, false, false, true, true, true, false, false, true, false, false, true)),
+                new ClassSelection("Fighter", "A master of martial combat, skilled with a variety of weapons and armour", 10, "Strength or Dexterity", new ClassProficiencies(true, false, true, false, false, false, true, true, true, true, true, true, true, true, false, true, false, true, true, true, false, false, false, true, false, false, false, false, false, true)),
+                new ClassSelection("Monk", "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection", 8, "Dexterity and Wisdom", new ClassProficiencies(true, true, false, false, false, false, false, false, false, false, true, false, true, false, false, true, false, true, true, false, false, false, false, false, false, false, true, false, true, false)),
+                new ClassSelection("Paladin", "A holy warrior bound to a sacred oath", 10, "Strength and Charisma", new ClassProficiencies(false, false, false, false, true, true, true, true, true, true, true, true, false, false, false, true, false, false, true, true, false, true, false, false, false, true, true, false, false, false)),
+                new ClassSelection("Ranger", "A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization", 10, "Dexterity and Wisdom", new ClassProficiencies(true, true, false, false, false, false, true, true, false, true, true, true, false, true, false, true, false, false, true, false, true, false, true, true, false, false, false, false, true, true)),
+                new ClassSelection("Rogue", "A scoundrel who uses stealth and trickery to overcome obstacles and enemies", 8, "Dexterity", new ClassProficiencies(false, true, false, true, false, false, true, false, false, false, true, false, true, false, false, true, true, false, true, true, true, false, false, true, true, true, false, true, true, false)),
+                new ClassSelection("Sorcerer", "A spellcaster who draws on inherent magic from a gift or bloodline", 6, "Charisma", new ClassProficiencies(false, false, true, false, false, true, false, false, false, false, false, false, false, false, true, false, true, false, true, true, false, false, false, true, false, false, true, false, false, false)),
+                new ClassSelection("Warlock", "A wielder of magic that is derived from a bargain with an extraplanar entity", 6, "Charisma", new ClassProficiencies(false, false, false, false, true, true, true, false, false, false, true, false, false, false, true, false, true, true, false, true, true, false, true, false, false, false, true, false, false, false)),
+                new ClassSelection("Wizard", "A scholarly magic user capable of manupulating the structure of reality", 6, "Intelligence", new ClassProficiencies(false, false, false, true, true, false, false, false, false, false, false, false, false, false, true, false, false, true, true, false, true, true, false, false, false, false, true, false, false, false))
+            );
+            context.SaveChanges();
+
+            context.Races.AddOrUpdate(
+                ra => ra.RaceName,
+                new RaceSelection(
+                    "Hill Dwarf", // RACE NAME (SUBRACE)
+                    new AbilityIncrease(0, 0, 2, 0, 1, 0), // ABILITY SCORE BOOST
+                    "50 - 350", // AGE RANGE
+                    'M', // SIZE
+                    25, // SPEED
+                    null, // DRAGONBORN COLOR
+                    false, // LOWLIGHT BOOLEAN
+                    null, // LOWLIGHT RANGE
+                    true, // DARKVISION BOOLEAN
+                    60, // DARKVISION RANGE
+                    "Battleaxe, Handaxe, Throwing Hammer, Warhammer, Smith's Tools, Brewer's Tools, Mason's Tools", // EXTRA PROFICIENCIES
+                    "Dwarven Resilience, Stonecunning, Dwarven Toughness", // EXTRA SKILLS
+                    "Dwarven, Common" // LANGUAGES
+                ),
+                new RaceSelection("Mountain Dwarf", new AbilityIncrease(2, 0, 2, 0, 0, 0), "50 - 350", 'M', 25, null, false, null, true, 60, "Battleaxe, Handaxe, Throwing Hammer, Warhammer, Light Armour, Medium Armour, Smith's Tools, Brewer's Tools, Mason's Tools", "Dwarven Resilience, Stonecunning", "Dwarven, Common"),
+                new RaceSelection("High Elf", new AbilityIncrease(0, 2, 0, 1, 0, 0), "100 - 750", 'M', 35, null, false, null, true, 60, "Perception, Longsword, Shortsword, Longbow, Shortbow", "Fey Ancestry, Trance, Cantrip, Extra Language", "languagas"),
+                new RaceSelection("Wood Elf", new AbilityIncrease(0, 2, 0, 0, 1, 0), "100 - 750", 'M', 30, null, false, null, true, 60, "Perception, Longsword, Shortsword, Longbow, Shortbow", "Fey Ancestry, Trance, Mask of the Wild", "languagas"),
+                new RaceSelection("Dark Elf", new AbilityIncrease(0, 2, 0, 0, 0, 1), "100 - 750", 'M', 30, null, false, null, true, 120, "Perception, Rapier, Shortsword, Hand Crossbow", "Fey Ancestry, Trance, Sunlight Sensitivity, Drow Magic", "Common, Elvish"),
+                new RaceSelection("Lightfoot Halfling", new AbilityIncrease(0, 2, 0, 0, 0, 1), "20-150", 'S', 25, null, false, null, false, null, "No Bonus Proficiencies", "Lucky, Brave, Halfling Nimbleness, Naturally Stealthy", "Common, Halfling"),
+                new RaceSelection("Stout Halfling", new AbilityIncrease(0, 2, 1, 0, 0, 0), "20-150", 'S', 25, null, false, null, false, null, "No Bonus Proficiencies", "Lucky, Brave, Halfling Nimbleness, Stout Resilience", "Common, Halfling"),
+                new RaceSelection("Human", new AbilityIncrease(1, 1, 1, 1, 1, 1), "18-80", 'M', 30, null, false, null, false, null, "1 Language of your choice", "No Bonus Abilities", "Common"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Black", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Acid], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Blue", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Lightning], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Brass", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Fire], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Bronze", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Lightning], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Copper", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 5 x 30ft Line (Dex. save) [Acid], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Gold", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Dex. save) [Fire], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Green", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Con. save) [Poison], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Red", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Dex. save) [Fire], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "Silver", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Con. save) [Cold], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Dragonborn", new AbilityIncrease(2, 0, 0, 0, 0, 1), "15-80", 'M', 30, "White", false, null, false, null, "No Bonus Proficiencies", "Breath Weapon: 15ft Cone (Con. save) [Cold], Damage Resistance", "Common, Draconic"),
+                new RaceSelection("Forest Gnome", new AbilityIncrease(0, 1, 0, 2, 0, 0), "40 - 450", 'S', 25, null, false, null, true, 60, "Artisan's Tools", "Gnome Cunning, Artificer's Lore, Tinker", "Common, Gnomish"),
+                new RaceSelection("Rock Gnome", new AbilityIncrease(0, 0, 1, 2, 0, 0), "40 - 450", 'S', 25, null, false, null, true, 60, "No Bonus Proficiencies", "Gnome Cunning, Natural Illusionist, Speak with Small Beasts", "Common, Gnomish"),
+                new RaceSelection("Half-Elf", new AbilityIncrease(0, 0, 0, 0, 0, 2), "20 - 180", 'M', 30, null, false, null, true, 60, "2 Skills of your choice", "+1 to 2 Ability Scores, Fey Ancestry", "Common, Elvish"),
+                new RaceSelection("Half-Orc", new AbilityIncrease(2, 0, 1, 0, 0, 0), "14 - 70", 'M', 30, null, false, null, true, 60, "Intimidation", "Relentless Endurance, Savage Attacks", "Common, Orc"),
+                new RaceSelection("Tiefling", new AbilityIncrease(0, 0, 0, 1, 0, 2), "18 - 85", 'M', 30, null, false, null, true, 60, "No Bonus Proficiencies", "Hellish Resistance, Infernal Legacy", "Common, Infernal")
+            );
+            context.SaveChanges();
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
+            //  to avoid creating duplicate seed data.
+        }

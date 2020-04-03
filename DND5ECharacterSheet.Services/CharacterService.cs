@@ -67,7 +67,7 @@ namespace DND5ECharacterSheet.Services
                     CharacterName = entity.CharacterName,
                     ClassId = entity.ClassId,
                     Class = entity.Class,
-                    RaceId = entity.RaceId,
+                    RaceId = entity.RaceName,
                     Race = entity.Race,
                     Level = entity.Level,
                     ExperiencePoints = entity.ExperiencePoints,
@@ -92,7 +92,7 @@ namespace DND5ECharacterSheet.Services
 
                     entity.CharacterName = model.CharacterName;
                     entity.ClassId = model.ClassId;
-                    entity.RaceId = model.RaceId;
+                    entity.RaceName = model.RaceId;
                     entity.ExperiencePoints = model.ExperiencePoints;
                     entity.Inspiration = model.Inspiration;
                     entity.CurrentHitPoints = model.CurrentHitPoints;

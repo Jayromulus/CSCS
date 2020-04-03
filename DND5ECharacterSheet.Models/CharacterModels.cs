@@ -14,7 +14,7 @@ namespace DND5ECharacterSheet.Models
         [Required]
         public int ClassId { get; set; }
         [Required]
-        public int RaceId { get; set; }
+        public string RaceId { get; set; }
         [Required]
         public int Experience { get; set; }
         [Required]
@@ -40,12 +40,11 @@ namespace DND5ECharacterSheet.Models
         public virtual ApplicationUser User { get; set; }
         public string CharacterName { get; set; }
         public int ClassId { get; set; }
-        public int RaceId { get; set; }
+        public string RaceId { get; set; }
         public int ExperiencePoints { get; set; }
         public int Inspiration { get; set; }
         public int CurrentHitPoints { get; set; }
         public int TemporaryHitPoints { get; set; } = 0;
-
     }
 
     public class CharacterDetail
@@ -56,7 +55,7 @@ namespace DND5ECharacterSheet.Models
         public string CharacterName { get; set; }
         public int ClassId { get; set; }
         public virtual ClassSelection Class { get; set; }
-        public int RaceId { get; set; }
+        public string RaceId { get; set; }
         public virtual RaceSelection Race { get; set; }
         public int ExperiencePoints { get; set; }
         public int Level { get; set; }
@@ -64,5 +63,32 @@ namespace DND5ECharacterSheet.Models
         public int MaxHP { get; set; }
         public int CurrentHitPoints { get; set; }
         public int TemporaryHitPoints { get; set; }
+    }
+
+    public enum RaceSelectEnum
+    {
+        HillDwarf = 1,
+        MountainDwarf = 2,
+        HighElf = 3,
+        WoodElf = 4,
+        DarkElf = 5,
+        LightfootHalfling = 6,
+        StoutHalfling = 7,
+        Human = 8,
+        BlackDragonborn = 9,
+        BlueDragonborn = 10,
+        BrassDragonborn = 11,
+        BronzeDragonborn = 12,
+        CopperDragonborn = 13,
+        GoldDragonborn = 14,
+        GreenDragonborn = 15,
+        RedDragonborn = 16,
+        SilverDragonborn = 17,
+        WhiteDragonborn = 18,
+        ForestGnome = 19,
+        RockGnome = 20,
+        HalfElf = 21,
+        HalfOrc = 22,
+        Tiefling = 23
     }
 }

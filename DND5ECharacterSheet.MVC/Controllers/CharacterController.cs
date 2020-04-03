@@ -40,7 +40,6 @@ namespace DND5ECharacterSheet.MVC.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
-
             return View(model);
         }
 
