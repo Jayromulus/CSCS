@@ -63,21 +63,9 @@
     <Compile Include="Items\Armour.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
-    <Compile Include="Migrations\202004022243445_GithubIsWack.cs" />
-    <Compile Include="Migrations\202004022243445_GithubIsWack.designer.cs">
-      <DependentUpon>202004022243445_GithubIsWack.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004022253564_ChangedSomeThings.cs" />
-    <Compile Include="Migrations\202004022253564_ChangedSomeThings.designer.cs">
-      <DependentUpon>202004022253564_ChangedSomeThings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004022314064_MakleThePainStop.cs" />
-    <Compile Include="Migrations\202004022314064_MakleThePainStop.designer.cs">
-      <DependentUpon>202004022314064_MakleThePainStop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004030126401_FinalRaceSeed.cs" />
-    <Compile Include="Migrations\202004030126401_FinalRaceSeed.designer.cs">
-      <DependentUpon>202004030126401_FinalRaceSeed.cs</DependentUpon>
+    <Compile Include="Migrations\202004030134431_DoneSeeding.cs" />
+    <Compile Include="Migrations\202004030134431_DoneSeeding.designer.cs">
+      <DependentUpon>202004030134431_DoneSeeding.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,21 +73,11 @@
     <Compile Include="SkillSet.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004022243445_GithubIsWack.resx">
-      <DependentUpon>202004022243445_GithubIsWack.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004022253564_ChangedSomeThings.resx">
-      <DependentUpon>202004022253564_ChangedSomeThings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004022314064_MakleThePainStop.resx">
-      <DependentUpon>202004022314064_MakleThePainStop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004030126401_FinalRaceSeed.resx">
-      <DependentUpon>202004030126401_FinalRaceSeed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004030134431_DoneSeeding.resx">
+      <DependentUpon>202004030134431_DoneSeeding.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
