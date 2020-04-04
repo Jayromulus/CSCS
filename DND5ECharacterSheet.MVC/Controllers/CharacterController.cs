@@ -24,6 +24,12 @@ namespace DND5ECharacterSheet.MVC.Controllers
         //GET: Character/Create
         public ActionResult Create()
         {
+            var service = GetCharacterService();
+            var raceList = new SelectList(service.GetRaceNames(), "RaceId", "RaceName");
+            var classList = new SelectList(service.GetClassNames(), "ClassId", "ClassName");
+
+            ViewBag.RaceId = raceList;
+            ViewBag.ClassId = classList;
             return View();
         }
 
@@ -40,6 +46,7 @@ namespace DND5ECharacterSheet.MVC.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
+
             return View(model);
         }
 
@@ -70,6 +77,11 @@ namespace DND5ECharacterSheet.MVC.Controllers
                 return HttpNotFound();
             }
 
+            var raceList = new SelectList(service.GetRaceNames(), "RaceId", "RaceName");
+            var classList = new SelectList(service.GetClassNames(), "ClassId", "ClassName");
+
+            ViewBag.RaceId = raceList;
+            ViewBag.ClassId = classList;
             return View(character);
         }
 

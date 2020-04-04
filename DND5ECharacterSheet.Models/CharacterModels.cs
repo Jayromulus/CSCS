@@ -1,9 +1,11 @@
 ﻿using DND5ECharacterSheet.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.WebPages.Html;
 
 namespace DND5ECharacterSheet.Models
 {
@@ -11,14 +13,21 @@ namespace DND5ECharacterSheet.Models
     {
         [Required]
         public string CharacterName { get; set; }
+
         [Required]
         public int ClassId { get; set; }
+
         [Required]
-        public string RaceId { get; set; }
+        [ForeignKey(nameof(Races))]
+        public int RaceId { get; set; }
+        public virtual RaceSelection Races { get; set; }
+        
         [Required]
         public int Experience { get; set; }
+        
         [Required]
         public int Inspiration { get; set; }
+        
         [Required]
         public int MaxHP { get; set; }
     }
@@ -40,7 +49,7 @@ namespace DND5ECharacterSheet.Models
         public virtual ApplicationUser User { get; set; }
         public string CharacterName { get; set; }
         public int ClassId { get; set; }
-        public string RaceId { get; set; }
+        public int RaceId { get; set; }
         public int ExperiencePoints { get; set; }
         public int Inspiration { get; set; }
         public int CurrentHitPoints { get; set; }
@@ -55,7 +64,7 @@ namespace DND5ECharacterSheet.Models
         public string CharacterName { get; set; }
         public int ClassId { get; set; }
         public virtual ClassSelection Class { get; set; }
-        public string RaceId { get; set; }
+        public int RaceId { get; set; }
         public virtual RaceSelection Race { get; set; }
         public int ExperiencePoints { get; set; }
         public int Level { get; set; }

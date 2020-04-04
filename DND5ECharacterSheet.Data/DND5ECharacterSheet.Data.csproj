@@ -63,17 +63,13 @@
     <Compile Include="Items\Armour.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
-    <Compile Include="Migrations\202004030641388_IHateDropdownMenusInRazorMVC.cs" />
-    <Compile Include="Migrations\202004030641388_IHateDropdownMenusInRazorMVC.designer.cs">
-      <DependentUpon>202004030641388_IHateDropdownMenusInRazorMVC.cs</DependentUpon>
+    <Compile Include="Migrations\202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.cs" />
+    <Compile Include="Migrations\202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.designer.cs">
+      <DependentUpon>202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.cs" />
-    <Compile Include="Migrations\202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.designer.cs">
-      <DependentUpon>202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004030647286_JustWorkPleaseMySnityBegsYou.cs" />
-    <Compile Include="Migrations\202004030647286_JustWorkPleaseMySnityBegsYou.designer.cs">
-      <DependentUpon>202004030647286_JustWorkPleaseMySnityBegsYou.cs</DependentUpon>
+    <Compile Include="Migrations\202004032132593_BringBackRaceIdColumn.cs" />
+    <Compile Include="Migrations\202004032132593_BringBackRaceIdColumn.designer.cs">
+      <DependentUpon>202004032132593_BringBackRaceIdColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,14 +83,11 @@
     <Content Include="ConfigurationSeed.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004030641388_IHateDropdownMenusInRazorMVC.resx">
-      <DependentUpon>202004030641388_IHateDropdownMenusInRazorMVC.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.resx">
+      <DependentUpon>202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.resx">
-      <DependentUpon>202004030643215_IAmSoTiredAndFullOfRageMayGodHelpUsAll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004030647286_JustWorkPleaseMySnityBegsYou.resx">
-      <DependentUpon>202004030647286_JustWorkPleaseMySnityBegsYou.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004032132593_BringBackRaceIdColumn.resx">
+      <DependentUpon>202004032132593_BringBackRaceIdColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

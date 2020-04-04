@@ -28,6 +28,48 @@ namespace DND5ECharacterSheet.Services
             return await _context.SaveChangesAsync() == 1;
         }
 
+        // GET ALL RACE NAMES FOR DROPDOWN
+        public IEnumerable<RaceList> GetRaceNames()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Races
+                        .Select(
+                            e =>
+                                new RaceList
+                                {
+                                    RaceId = e.Id,
+                                    RaceName = e.RaceName,
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
+        // GET ALL CLASS NAMES FOR DROPDOWN
+        public IEnumerable<ClassList> GetClassNames()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Classes
+                        .Select(
+                            e =>
+                                new ClassList
+                                {
+                                    ClassId = e.Id,
+                                    ClassName = e.ClassName,
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
         // GET ALL
         public async Task<List<CharacterListItem>> GetAllCharactersAsync()
         {
@@ -67,7 +109,7 @@ namespace DND5ECharacterSheet.Services
                     CharacterName = entity.CharacterName,
                     ClassId = entity.ClassId,
                     Class = entity.Class,
-                    RaceId = entity.RaceName,
+                    RaceId = entity.RaceId,
                     Race = entity.Race,
                     Level = entity.Level,
                     ExperiencePoints = entity.ExperiencePoints,
@@ -92,7 +134,7 @@ namespace DND5ECharacterSheet.Services
 
                     entity.CharacterName = model.CharacterName;
                     entity.ClassId = model.ClassId;
-                    entity.RaceName = model.RaceId;
+                    entity.RaceId = model.RaceId;
                     entity.ExperiencePoints = model.ExperiencePoints;
                     entity.Inspiration = model.Inspiration;
                     entity.CurrentHitPoints = model.CurrentHitPoints;
