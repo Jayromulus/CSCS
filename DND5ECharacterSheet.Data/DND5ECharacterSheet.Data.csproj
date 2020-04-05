@@ -63,15 +63,6 @@
     <Compile Include="Items\Armour.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
-    <Compile Include="Migrations\202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.cs" />
-    <Compile Include="Migrations\202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.designer.cs">
-      <DependentUpon>202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004032132593_BringBackRaceIdColumn.cs" />
-    <Compile Include="Migrations\202004032132593_BringBackRaceIdColumn.designer.cs">
-      <DependentUpon>202004032132593_BringBackRaceIdColumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaceSelection.cs" />
     <Compile Include="SkillSet.cs" />
@@ -83,12 +74,7 @@
     <Content Include="ConfigurationSeed.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.resx">
-      <DependentUpon>202004031822561_DROPDOWNMENUINRAZORMVCISAPPARENTLYONLYPOSSIBLEINTHEYEAR1952.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004032132593_BringBackRaceIdColumn.resx">
-      <DependentUpon>202004032132593_BringBackRaceIdColumn.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

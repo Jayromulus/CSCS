@@ -18,10 +18,17 @@ namespace DND5ECharacterSheet.Models
         public int ClassId { get; set; }
 
         [Required]
-        [ForeignKey(nameof(Races))]
+        //[ForeignKey(nameof(Races))]
         public int RaceId { get; set; }
-        public virtual RaceSelection Races { get; set; }
-        
+        //public virtual RaceSelection Races { get; set; }
+
+        public int? BaseStrength { get; set; }
+        public int? BaseDexterity { get; set; }
+        public int? BaseConstitution { get; set; }
+        public int? BaseIntelligence { get; set; }
+        public int? BaseWisdom { get; set; }
+        public int? BaseCharisma { get; set; }
+
         [Required]
         public int Experience { get; set; }
         
@@ -50,6 +57,12 @@ namespace DND5ECharacterSheet.Models
         public string CharacterName { get; set; }
         public int ClassId { get; set; }
         public int RaceId { get; set; }
+        public int? BaseStrength { get; set; }
+        public int? BaseDexterity { get; set; }
+        public int? BaseConstitution { get; set; }
+        public int? BaseIntelligence { get; set; }
+        public int? BaseWisdom { get; set; }
+        public int? BaseCharisma { get; set; }
         public int ExperiencePoints { get; set; }
         public int Inspiration { get; set; }
         public int CurrentHitPoints { get; set; }
@@ -66,6 +79,21 @@ namespace DND5ECharacterSheet.Models
         public virtual ClassSelection Class { get; set; }
         public int RaceId { get; set; }
         public virtual RaceSelection Race { get; set; }
+        public int? BaseStrength { get; set; }
+        public int? BaseDexterity { get; set; }
+        public int? BaseConstitution { get; set; }
+        public int? BaseIntelligence { get; set; }
+        public int? BaseWisdom { get; set; }
+        public int? BaseCharisma { get; set; }
+
+        //// FIX THESE SOON BECAUSE THEY ARE NOT CURRENTLY WORKING
+        //public int? Strength { get { return Race.AbilityIncreases.Strength != null ? BaseStrength + Race.AbilityIncreases.Strength : BaseStrength; } }
+        //public int? Dexterity { get { return Race.AbilityIncreases.Dexterity != null ? BaseDexterity + Race.AbilityIncreases.Dexterity : BaseDexterity; } }
+        //public int? Constitution { get { return Race.AbilityIncreases.Constitution != null ? BaseConstitution + Race.AbilityIncreases.Constitution : BaseConstitution; } }
+        //public int? Intelligence { get { return Race.AbilityIncreases.Intelligence != null ? BaseIntelligence + Race.AbilityIncreases.Intelligence : BaseIntelligence; } }
+        //public int? Wisdom { get { return Race.AbilityIncreases.Wisdom != null ? BaseWisdom + Race.AbilityIncreases.Wisdom : BaseWisdom; } }
+        //public int? Charisma { get { return Race.AbilityIncreases.Charisma != null ? BaseCharisma + Race.AbilityIncreases.Charisma : BaseCharisma; } }
+
         public int ExperiencePoints { get; set; }
         public int Level { get; set; }
         public int Inspiration { get; set; }

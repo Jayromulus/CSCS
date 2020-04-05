@@ -23,7 +23,7 @@ namespace DND5ECharacterSheet.Services
         // CREATE
         public async Task<bool> CreateCharacterAsync(CharacterCreate model)
         {
-            Character entity = new Character(_userId, model.CharacterName, model.ClassId, model.RaceId, model.Experience, model.Inspiration, model.MaxHP);
+            Character entity = new Character(_userId, model.CharacterName, model.ClassId, model.RaceId, model.BaseStrength, model.BaseDexterity, model.BaseConstitution, model.BaseIntelligence, model.BaseWisdom, model.BaseCharisma, model.Experience, model.Inspiration, model.MaxHP);
             _context.Characters.Add(entity);
             return await _context.SaveChangesAsync() == 1;
         }
@@ -111,6 +111,12 @@ namespace DND5ECharacterSheet.Services
                     Class = entity.Class,
                     RaceId = entity.RaceId,
                     Race = entity.Race,
+                    BaseStrength = entity.BaseStrength,
+                    BaseDexterity = entity.BaseDexterity,
+                    BaseConstitution = entity.BaseConstitution,
+                    BaseIntelligence = entity.BaseIntelligence,
+                    BaseWisdom = entity.BaseWisdom,
+                    BaseCharisma = entity.BaseCharisma,
                     Level = entity.Level,
                     ExperiencePoints = entity.ExperiencePoints,
                     Inspiration = entity.Inspiration,
