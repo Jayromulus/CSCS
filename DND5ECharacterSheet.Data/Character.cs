@@ -68,6 +68,19 @@ namespace DND5ECharacterSheet.Data
         public int? BaseWisdom { get; set; }
         public int? BaseCharisma { get; set; }
 
+
+        //public int? Strength
+        //{
+        //    get
+        //    {
+        //        int? raceStrength = Race.AbilityIncreases.Strength;
+        //        if (raceStrength != null)
+        //            return BaseStrength + raceStrength;
+        //        return BaseStrength;
+        //    }
+        //}
+
+
         // ADD THE REAL LOGIC FOR THIS LATER
         public int Level 
         { 

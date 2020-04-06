@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,10 @@ namespace DND5ECharacterSheet.Data
     public class RaceSelection
     {
         public RaceSelection() { }
-        public RaceSelection(string name, AbilityIncrease abil, string age, char size, int speed, bool lowlight, int? lowlightrange, bool dark, int? darkrange, string profs, string extra, string lang)
+        public RaceSelection(string name, int abil, string age, char size, int speed, bool lowlight, int? lowlightrange, bool dark, int? darkrange, string profs, string extra, string lang)
         {
             RaceName = name;
-            AbilityIncreases = abil;
+            IncreaseId = abil;
             AgeRange = age;
             Size = size;
             Speed = speed;
@@ -33,8 +34,11 @@ namespace DND5ECharacterSheet.Data
         [Display(Name = "Race")]
         public string RaceName { get; set; }
 
-        [Required]
 
+        [Required]
+        [ForeignKey(nameof(AbilityIncreases))]
+        public int IncreaseId { get; set; }
+        [Required]
         public AbilityIncrease AbilityIncreases { get; set; }
 
         public string AgeRange { get; set; }

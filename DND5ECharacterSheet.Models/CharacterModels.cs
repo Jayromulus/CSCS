@@ -1,6 +1,7 @@
 ﻿using DND5ECharacterSheet.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -79,11 +80,19 @@ namespace DND5ECharacterSheet.Models
         public virtual ClassSelection Class { get; set; }
         public int RaceId { get; set; }
         public virtual RaceSelection Race { get; set; }
+
+        public int? Strength { get; set; }
+        //[Display(Name = "Strength")]
         public int? BaseStrength { get; set; }
+        [Display(Name = "Dexterity")]
         public int? BaseDexterity { get; set; }
+        [Display(Name = "Constitution")]
         public int? BaseConstitution { get; set; }
+        [Display(Name = "Intelligence")]
         public int? BaseIntelligence { get; set; }
+        [Display(Name = "Wisdom")]
         public int? BaseWisdom { get; set; }
+        [Display(Name = "Charisma")]
         public int? BaseCharisma { get; set; }
 
         //// FIX THESE SOON BECAUSE THEY ARE NOT CURRENTLY WORKING
@@ -96,6 +105,7 @@ namespace DND5ECharacterSheet.Models
 
         public int ExperiencePoints { get; set; }
         public int Level { get; set; }
+        public int ProficiencyBonus { get; set; }
         public int Inspiration { get; set; }
         public int MaxHP { get; set; }
         public int CurrentHitPoints { get; set; }
