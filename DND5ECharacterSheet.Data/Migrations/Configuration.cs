@@ -14,6 +14,33 @@
 
         protected override void Seed(DND5ECharacterSheet.Data.ApplicationDbContext context)
         {
+            context.RaceBonuses.AddOrUpdate
+            (
+                b => b.IncreaseId,
+                new AbilityIncrease
+                (
+                    0, // STRENGTH
+                    0, // DEXTERITY
+                    2, // CONSTITUTION
+                    0, // INTELLIGENCE
+                    1, // WISDOM
+                    0  // CHARISMA
+                ),
+                new AbilityIncrease(2, 0, 2, 0, 0, 0),
+                new AbilityIncrease(0, 2, 0, 1, 0, 0),
+                new AbilityIncrease(0, 2, 0, 0, 1, 0),
+                new AbilityIncrease(0, 2, 0, 0, 0, 1),
+                new AbilityIncrease(0, 2, 1, 0, 0, 0),
+                new AbilityIncrease(1, 1, 1, 1, 1, 1),
+                new AbilityIncrease(2, 0, 0, 0, 0, 1),
+                new AbilityIncrease(0, 1, 0, 2, 0, 0),
+                new AbilityIncrease(0, 0, 1, 2, 0, 0),
+                new AbilityIncrease(0, 0, 0, 0, 0, 2),
+                new AbilityIncrease(2, 0, 1, 0, 0, 0),
+                new AbilityIncrease(0, 0, 0, 1, 0, 2)
+            );
+            context.SaveChanges();
+
             context.Classes.AddOrUpdate(
                 cl => cl.ClassName,
                 new ClassSelection
@@ -111,32 +138,7 @@
             );
             context.SaveChanges();
 
-            context.RaceBonuses.AddOrUpdate
-            (
-                b => b.IncreaseId,
-                new AbilityIncrease
-                (
-                    0, // STRENGTH
-                    0, // DEXTERITY
-                    2, // CONSTITUTION
-                    0, // INTELLIGENCE
-                    1, // WISDOM
-                    0  // CHARISMA
-                ),
-                new AbilityIncrease(2, 0, 2, 0, 0, 0),
-                new AbilityIncrease(0, 2, 0, 1, 0, 0),
-                new AbilityIncrease(0, 2, 0, 0, 1, 0),
-                new AbilityIncrease(0, 2, 0, 0, 0, 1),
-                new AbilityIncrease(0, 2, 1, 0, 0, 0),
-                new AbilityIncrease(1, 1, 1, 1, 1, 1),
-                new AbilityIncrease(2, 0, 0, 0, 0, 1),
-                new AbilityIncrease(0, 1, 0, 2, 0, 0),
-                new AbilityIncrease(0, 0, 1, 2, 0, 0),
-                new AbilityIncrease(0, 0, 0, 0, 0, 2),
-                new AbilityIncrease(2, 0, 1, 0, 0, 0),
-                new AbilityIncrease(0, 0, 0, 1, 0, 2)
-            );
-            context.SaveChanges();
+            
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
