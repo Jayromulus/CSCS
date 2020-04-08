@@ -11,7 +11,7 @@ namespace DND5ECharacterSheet.Data
     public class Character
     {
         public Character() { }
-        public Character (string userId, string charName, int classChoice, int raceChoice, int? str, int? dex, int? con, int? inte, int? wis, int? cha, int exp, int inspiration, int maxhp)
+        public Character (string userId, string charName, int classChoice, int raceChoice, int str, int dex, int con, int inte, int wis, int cha, int exp, int inspiration, int maxhp)
         {
             AddedBy = userId;
             CreatedOn = DateTime.Now;
@@ -44,7 +44,7 @@ namespace DND5ECharacterSheet.Data
         [Required]
         public string CharacterName { get; set; }
 
-
+        [Required]
         [ForeignKey(nameof(Class))]
         public int ClassId { get; set; }
         public virtual ClassSelection Class { get; set; }
@@ -61,12 +61,18 @@ namespace DND5ECharacterSheet.Data
         [Required]
         public int ExperiencePoints { get; set; }
 
-        public int? BaseStrength { get; set; }
-        public int? BaseDexterity { get; set; }
-        public int? BaseConstitution { get; set; }
-        public int? BaseIntelligence { get; set; }
-        public int? BaseWisdom { get; set; }
-        public int? BaseCharisma { get; set; }
+        [Required]
+        public int BaseStrength { get; set; }
+        [Required]
+        public int BaseDexterity { get; set; }
+        [Required]
+        public int BaseConstitution { get; set; }
+        [Required]
+        public int BaseIntelligence { get; set; }
+        [Required]
+        public int BaseWisdom { get; set; }
+        [Required]
+        public int BaseCharisma { get; set; }
 
 
         //public int? Strength
@@ -170,6 +176,7 @@ namespace DND5ECharacterSheet.Data
         public int Inspiration { get; set; } = 0;
 
         // MAYBE MAKE THIS GET ONLY?
+        [Required]
         public int MaxHitPoints { get; set; }
         public int CurrentHitPoints { get; set; }
         public int TemporaryHitPoints { get; set; }

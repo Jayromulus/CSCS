@@ -23,12 +23,12 @@ namespace DND5ECharacterSheet.Models
         public int RaceId { get; set; }
         //public virtual RaceSelection Races { get; set; }
 
-        public int? BaseStrength { get; set; }
-        public int? BaseDexterity { get; set; }
-        public int? BaseConstitution { get; set; }
-        public int? BaseIntelligence { get; set; }
-        public int? BaseWisdom { get; set; }
-        public int? BaseCharisma { get; set; }
+        public int BaseStrength { get; set; }
+        public int BaseDexterity { get; set; }
+        public int BaseConstitution { get; set; }
+        public int BaseIntelligence { get; set; }
+        public int BaseWisdom { get; set; }
+        public int BaseCharisma { get; set; }
 
         [Required]
         public int Experience { get; set; }
@@ -58,12 +58,12 @@ namespace DND5ECharacterSheet.Models
         public string CharacterName { get; set; }
         public int ClassId { get; set; }
         public int RaceId { get; set; }
-        public int? BaseStrength { get; set; }
-        public int? BaseDexterity { get; set; }
-        public int? BaseConstitution { get; set; }
-        public int? BaseIntelligence { get; set; }
-        public int? BaseWisdom { get; set; }
-        public int? BaseCharisma { get; set; }
+        public int BaseStrength { get; set; }
+        public int BaseDexterity { get; set; }
+        public int BaseConstitution { get; set; }
+        public int BaseIntelligence { get; set; }
+        public int BaseWisdom { get; set; }
+        public int BaseCharisma { get; set; }
         public int ExperiencePoints { get; set; }
         public int Inspiration { get; set; }
         public int CurrentHitPoints { get; set; }
@@ -75,34 +75,31 @@ namespace DND5ECharacterSheet.Models
         public int Id { get; set; }
         public virtual ApplicationUser User { get; set; }
         public string AddedBy { get; set; }
+        [Display(Name = "Character Name")]
         public string CharacterName { get; set; }
         public int ClassId { get; set; }
         public virtual ClassSelection Class { get; set; }
         public int RaceId { get; set; }
         public virtual RaceSelection Race { get; set; }
 
-        public int? Strength { get; set; }
-        //[Display(Name = "Strength")]
-        public int? BaseStrength { get; set; }
-        [Display(Name = "Dexterity")]
-        public int? BaseDexterity { get; set; }
-        [Display(Name = "Constitution")]
-        public int? BaseConstitution { get; set; }
-        [Display(Name = "Intelligence")]
-        public int? BaseIntelligence { get; set; }
-        [Display(Name = "Wisdom")]
-        public int? BaseWisdom { get; set; }
-        [Display(Name = "Charisma")]
-        public int? BaseCharisma { get; set; }
-
-        //// FIX THESE SOON BECAUSE THEY ARE NOT CURRENTLY WORKING
-        //public int? Strength { get { return Race.AbilityIncreases.Strength != null ? BaseStrength + Race.AbilityIncreases.Strength : BaseStrength; } }
-        //public int? Dexterity { get { return Race.AbilityIncreases.Dexterity != null ? BaseDexterity + Race.AbilityIncreases.Dexterity : BaseDexterity; } }
-        //public int? Constitution { get { return Race.AbilityIncreases.Constitution != null ? BaseConstitution + Race.AbilityIncreases.Constitution : BaseConstitution; } }
-        //public int? Intelligence { get { return Race.AbilityIncreases.Intelligence != null ? BaseIntelligence + Race.AbilityIncreases.Intelligence : BaseIntelligence; } }
-        //public int? Wisdom { get { return Race.AbilityIncreases.Wisdom != null ? BaseWisdom + Race.AbilityIncreases.Wisdom : BaseWisdom; } }
-        //public int? Charisma { get { return Race.AbilityIncreases.Charisma != null ? BaseCharisma + Race.AbilityIncreases.Charisma : BaseCharisma; } }
-
+        public int Strength { get; set; }
+        public int StrengthMod { get { return (Strength - 10) / 2; } }
+        public int Dexterity { get; set; }
+        public int DexterityMod { get { return (Dexterity - 10) / 2; } }
+        public int Constitution { get; set; }
+        public int ConstitutionMod { get { return (Constitution - 10) / 2; } }
+        public int Intelligence { get; set; }
+        public int IntelligenceMod { get { return (Intelligence- 10) / 2; } }
+        public int Wisdom { get; set; }
+        public int WisdomMod { get { return (Wisdom - 10) / 2; } }
+        public int Charisma { get; set; }
+        public int CharismaMod { get { return (Charisma - 10) / 2; } }
+        public int BaseStrength { get; set; }
+        public int BaseDexterity { get; set; }
+        public int BaseConstitution { get; set; }
+        public int BaseIntelligence { get; set; }
+        public int BaseWisdom { get; set; }
+        public int BaseCharisma { get; set; }
         public int ExperiencePoints { get; set; }
         public int Level { get; set; }
         public int ProficiencyBonus { get; set; }
@@ -110,32 +107,36 @@ namespace DND5ECharacterSheet.Models
         public int MaxHP { get; set; }
         public int CurrentHitPoints { get; set; }
         public int TemporaryHitPoints { get; set; }
-    }
 
-    public enum RaceSelectEnum
-    {
-        HillDwarf = 1,
-        MountainDwarf = 2,
-        HighElf = 3,
-        WoodElf = 4,
-        DarkElf = 5,
-        LightfootHalfling = 6,
-        StoutHalfling = 7,
-        Human = 8,
-        BlackDragonborn = 9,
-        BlueDragonborn = 10,
-        BrassDragonborn = 11,
-        BronzeDragonborn = 12,
-        CopperDragonborn = 13,
-        GoldDragonborn = 14,
-        GreenDragonborn = 15,
-        RedDragonborn = 16,
-        SilverDragonborn = 17,
-        WhiteDragonborn = 18,
-        ForestGnome = 19,
-        RockGnome = 20,
-        HalfElf = 21,
-        HalfOrc = 22,
-        Tiefling = 23
+        public int StrengthSave { get; set; }
+        //    DexteritySave = dex;
+        //    ConstitutionSave = con;
+        //    IntelligenceSave = sma;
+        //    WisdomSave = wis;
+        //    CharismaSave = cha;
+        //    LightArmour = la;
+        //    MediumArmour = ma;
+        //    HeavyArmour = ha;
+        //    Shield = sh;
+        //    SimpleWeapons = sw;
+        //    MartialWeapons = mw;
+        //    Acrobatics = acro;
+        //    AnimalHandling = anim;
+        //    Arcana = arc;
+        //    Athletics = ath;
+        //    Deception = dec;
+        //    History = his;
+        //    Insight = ins;
+        //    Intimidation = scare;
+        //    Investigation = invest;
+        //    Medicine = med;
+        //    Nature = nat;
+        //    Perception = perc;
+        //    Performance = perf;
+        //    Persuasion = pers;
+        //    Religion = rel;
+        //    SleightOfHand = soh;
+        //    Stealth = ste;
+        //    Survival = sur;
     }
 }

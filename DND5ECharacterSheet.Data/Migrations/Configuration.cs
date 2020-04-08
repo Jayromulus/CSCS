@@ -14,6 +14,55 @@
 
         protected override void Seed(DND5ECharacterSheet.Data.ApplicationDbContext context)
         {
+            context.ClassProficiencyList.AddOrUpdate(
+                cprof => cprof.PresetProficiencyId,
+                new ClassProficiencies
+                    (
+                        true,  // STRENGTH
+                        false, // DEXTERITY 
+                        true,  // CONSTITUTION
+                        false, // INTELLIGENCE
+                        false, // WISDOM
+                        false, // CHARISMA
+                        true,  // LIGHT ARMOUR
+                        true,  // MEDIUM ARMOUR
+                        false, // HEAVY ARMOUR
+                        true,  // SHIELD
+                        true,  // SIMPLE WEAPONS
+                        true,  // MARTIAL WEAPONS
+                        false, // ACROBATICS
+                        true,  // ANIMAL HANDLING
+                        false, // ARCANA
+                        true,  // ATHLETICS
+                        false, // DECEPTION
+                        false, // HISTORY
+                        false, // INSIGHT
+                        true,  // INTIMIDATION
+                        false, // INVESTIGATION
+                        false, // MEDICINE
+                        true,  // NATURE
+                        true,  // PERCEPTION
+                        false, // PERFORMANCE
+                        false, // PERSUASION
+                        false, // RELIGION
+                        false, // SLEIGHT OF HAND
+                        false, // STEALTH
+                        true   // SURVIVAL
+                    ),
+                new ClassProficiencies(false, true, false, false, false, true, true, false, false, false, true, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true),
+                new ClassProficiencies(false, false, false, false, true, true, true, true, false, true, true, false, false, false, false, false, false, true, true, false, false, true, false, false, false, true, true, false, false, false),
+                new ClassProficiencies(false, false, false, true, true, false, false, true, true, true, true, true, false, true, true, false, false, false, true, false, false, true, true, true, false, false, true, false, false, true),
+                new ClassProficiencies(true, false, true, false, false, false, true, true, true, true, true, true, true, true, false, true, false, true, true, true, false, false, false, true, false, false, false, false, false, true),
+                new ClassProficiencies(true, true, false, false, false, false, false, false, false, false, true, false, true, false, false, true, false, true, true, false, false, false, false, false, false, false, true, false, true, false),
+                new ClassProficiencies(false, false, false, false, true, true, true, true, true, true, true, true, false, false, false, true, false, false, true, true, false, true, false, false, false, true, true, false, false, false),
+                new ClassProficiencies(true, true, false, false, false, false, true, true, false, true, true, true, false, true, false, true, false, false, true, false, true, false, true, true, false, false, false, false, true, true),
+                new ClassProficiencies(false, true, false, true, false, false, true, false, false, false, true, false, true, false, false, true, true, false, true, true, true, false, false, true, true, true, false, true, true, false),
+                new ClassProficiencies(false, false, true, false, false, true, false, false, false, false, false, false, false, false, true, false, true, false, true, true, false, false, false, true, false, false, true, false, false, false),
+                new ClassProficiencies(false, false, false, false, true, true, true, false, false, false, true, false, false, false, true, false, true, true, false, true, true, false, true, false, false, false, true, false, false, false),
+                new ClassProficiencies(false, false, false, true, true, false, false, false, false, false, false, false, false, false, true, false, false, true, true, false, true, true, false, false, false, false, true, false, false, false)
+            );
+            context.SaveChanges();
+
             context.RaceBonuses.AddOrUpdate
             (
                 b => b.IncreaseId,
@@ -48,52 +97,20 @@
                     "Barbarian", // CLASS NAME
                     "A fierce warrior of primitive background who can enter a battle rage", // DESCRIPTION
                     12, // HIT DIE SIZE
-                    "Strength", // PRIMARY SBILITY
-                    new ClassProficiencies
-                    (
-                        true,  // STRENGTH
-                        false, // DEXTERITY 
-                        true,  // CONSTITUTION
-                        false, // INTELLIGENCE
-                        false, // WISDOM
-                        false, // CHARISMA
-                        true,  // LIGHT ARMOUR
-                        true,  // MEDIUM ARMOUR
-                        false, // HEAVY ARMOUR
-                        true,  // SHIELD
-                        true,  // SIMPLE WEAPONS
-                        true,  // MARTIAL WEAPONS
-                        false, // ACROBATICS
-                        true,  // ANIMAL HANDLING
-                        false, // ARCANA
-                        true,  // ATHLETICS
-                        false, // DECEPTION
-                        false, // HISTORY
-                        false, // INSIGHT
-                        true,  // INTIMIDATION
-                        false, // INVESTIGATION
-                        false, // MEDICINE
-                        true,  // NATURE
-                        true,  // PERCEPTION
-                        false, // PERFORMANCE
-                        false, // PERSUASION
-                        false, // RELIGION
-                        false, // SLEIGHT OF HAND
-                        false, // STEALTH
-                        true   // SURVIVAL
-                    )
+                    "Strength", // PRIMARY ABILITY
+                    1 // PROFICIENCY ID
                 ),
-                new ClassSelection("Bard", "An inspiring magician whose power echoes the music of creation", 8, "Charisma", new ClassProficiencies(false, true, false, false, false, true, true, false, false, false, true, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true)),
-                new ClassSelection("Cleric", "A priestly champion who wields divine magic in service of a higher power", 8, "Wisdom", new ClassProficiencies(false, false, false, false, true, true, true, true, false, true, true, false, false, false, false, false, false, true, true, false, false, true, false, false, false, true, true, false, false, false)),
-                new ClassSelection("Druid", "A priest of the Old Faith, weilding the powers of nature - moonlight and plant growth, fire and lightnint - and adopting animal forms", 8, "Wisdom", new ClassProficiencies(false, false, false, true, true, false, false, true, true, true, true, true, false, true, true, false, false, false, true, false, false, true, true, true, false, false, true, false, false, true)),
-                new ClassSelection("Fighter", "A master of martial combat, skilled with a variety of weapons and armour", 10, "Strength or Dexterity", new ClassProficiencies(true, false, true, false, false, false, true, true, true, true, true, true, true, true, false, true, false, true, true, true, false, false, false, true, false, false, false, false, false, true)),
-                new ClassSelection("Monk", "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection", 8, "Dexterity and Wisdom", new ClassProficiencies(true, true, false, false, false, false, false, false, false, false, true, false, true, false, false, true, false, true, true, false, false, false, false, false, false, false, true, false, true, false)),
-                new ClassSelection("Paladin", "A holy warrior bound to a sacred oath", 10, "Strength and Charisma", new ClassProficiencies(false, false, false, false, true, true, true, true, true, true, true, true, false, false, false, true, false, false, true, true, false, true, false, false, false, true, true, false, false, false)),
-                new ClassSelection("Ranger", "A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization", 10, "Dexterity and Wisdom", new ClassProficiencies(true, true, false, false, false, false, true, true, false, true, true, true, false, true, false, true, false, false, true, false, true, false, true, true, false, false, false, false, true, true)),
-                new ClassSelection("Rogue", "A scoundrel who uses stealth and trickery to overcome obstacles and enemies", 8, "Dexterity", new ClassProficiencies(false, true, false, true, false, false, true, false, false, false, true, false, true, false, false, true, true, false, true, true, true, false, false, true, true, true, false, true, true, false)),
-                new ClassSelection("Sorcerer", "A spellcaster who draws on inherent magic from a gift or bloodline", 6, "Charisma", new ClassProficiencies(false, false, true, false, false, true, false, false, false, false, false, false, false, false, true, false, true, false, true, true, false, false, false, true, false, false, true, false, false, false)),
-                new ClassSelection("Warlock", "A wielder of magic that is derived from a bargain with an extraplanar entity", 6, "Charisma", new ClassProficiencies(false, false, false, false, true, true, true, false, false, false, true, false, false, false, true, false, true, true, false, true, true, false, true, false, false, false, true, false, false, false)),
-                new ClassSelection("Wizard", "A scholarly magic user capable of manupulating the structure of reality", 6, "Intelligence", new ClassProficiencies(false, false, false, true, true, false, false, false, false, false, false, false, false, false, true, false, false, true, true, false, true, true, false, false, false, false, true, false, false, false))
+                new ClassSelection("Bard", "An inspiring magician whose power echoes the music of creation", 8, "Charisma", 2),
+                new ClassSelection("Cleric", "A priestly champion who wields divine magic in service of a higher power", 8, "Wisdom", 3),
+                new ClassSelection("Druid", "A priest of the Old Faith, weilding the powers of nature - moonlight and plant growth, fire and lightnint - and adopting animal forms", 8, "Wisdom", 4),
+                new ClassSelection("Fighter", "A master of martial combat, skilled with a variety of weapons and armour", 10, "Strength or Dexterity", 5),
+                new ClassSelection("Monk", "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection", 8, "Dexterity and Wisdom", 6),
+                new ClassSelection("Paladin", "A holy warrior bound to a sacred oath", 10, "Strength and Charisma", 7),
+                new ClassSelection("Ranger", "A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization", 10, "Dexterity and Wisdom", 8),
+                new ClassSelection("Rogue", "A scoundrel who uses stealth and trickery to overcome obstacles and enemies", 8, "Dexterity", 9),
+                new ClassSelection("Sorcerer", "A spellcaster who draws on inherent magic from a gift or bloodline", 6, "Charisma", 10),
+                new ClassSelection("Warlock", "A wielder of magic that is derived from a bargain with an extraplanar entity", 6, "Charisma", 11),
+                new ClassSelection("Wizard", "A scholarly magic user capable of manupulating the structure of reality", 6, "Intelligence", 12)
             );
             context.SaveChanges();
 
@@ -137,8 +154,6 @@
                 new RaceSelection("Tiefling", 13, "18 - 85", 'M', 30, false, null, true, 60, "No Bonus Proficiencies", "Hellish Resistance, Infernal Legacy", "Common, Infernal")
             );
             context.SaveChanges();
-
-            
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method

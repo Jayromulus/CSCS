@@ -9,6 +9,9 @@
 <div>
     <h4>CharacterDetail</h4>
     <hr />
+
+
+    
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.AddedBy)
@@ -35,6 +38,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Class.Proficiencies.StrengthSave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StrengthSave)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Race)
         </dt>
 
@@ -43,51 +54,51 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BaseStrength)
+            @Html.DisplayNameFor(model => model.Strength)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BaseStrength)
+            @Html.DisplayFor(model => model.Strength) (@Html.DisplayFor(model => model.StrengthMod))
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BaseDexterity)
+            @Html.DisplayNameFor(model => model.Dexterity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BaseDexterity)
+            @Html.DisplayFor(model => model.Dexterity) (@Html.DisplayFor(model => model.DexterityMod))
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BaseConstitution)
+            @Html.DisplayNameFor(model => model.Constitution)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BaseConstitution)
+            @Html.DisplayFor(model => model.Constitution) (@Html.DisplayFor(model => model.ConstitutionMod))
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BaseIntelligence)
+            @Html.DisplayNameFor(model => model.Intelligence)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BaseIntelligence)
+            @Html.DisplayFor(model => model.Intelligence) (@Html.DisplayFor(model => model.IntelligenceMod))
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BaseWisdom)
+            @Html.DisplayNameFor(model => model.Wisdom)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BaseWisdom)
+            @Html.DisplayFor(model => model.Wisdom) (@Html.DisplayFor(model => model.WisdomMod))
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BaseCharisma)
+            @Html.DisplayNameFor(model => model.Charisma)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BaseCharisma)
+            @Html.DisplayFor(model => model.Charisma) (@Html.DisplayFor(model => model.CharismaMod))
         </dd>
 
         <dt>
@@ -147,8 +158,19 @@
         </dd>
 
     </dl>
+
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<script>
+    let base = document.getElementById("base-strength")
+
+    let bstat = base.value
+    console.log(race)
+
+    document.getElementById("combined-strength").innerText = bstat
+</script>

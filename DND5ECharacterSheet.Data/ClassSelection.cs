@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,13 @@ namespace DND5ECharacterSheet.Data
     public class ClassSelection
     {
         public ClassSelection() { }
-        public ClassSelection(string name, string desc, int dice, string primary, ClassProficiencies profs)
+        public ClassSelection(string name, string desc, int dice, string primary, int profs)
         {
             ClassName = name;
             Description = desc;
             HitDieSize = dice;
             PrimaryAbility = primary;
-            Proficiencies = profs;
+            ProficienciesId = profs;
         }
 
         [Key]
@@ -36,7 +37,10 @@ namespace DND5ECharacterSheet.Data
         public string PrimaryAbility { get; set; }
 
         [Required]
-        public ClassProficiencies Proficiencies { get; set; }
+        [ForeignKey(nameof(Proficiencies))]
+        public int ProficienciesId { get; set; }
+        
+        public virtual ClassProficiencies Proficiencies { get; set; }
     }
 
     public class ClassProficiencies

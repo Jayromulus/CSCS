@@ -63,9 +63,13 @@
     <Compile Include="Items\Armour.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
-    <Compile Include="Migrations\202004060446256_SeedContent.cs" />
-    <Compile Include="Migrations\202004060446256_SeedContent.designer.cs">
-      <DependentUpon>202004060446256_SeedContent.cs</DependentUpon>
+    <Compile Include="Migrations\202004071614452_DatabaseReset.cs" />
+    <Compile Include="Migrations\202004071614452_DatabaseReset.designer.cs">
+      <DependentUpon>202004071614452_DatabaseReset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004080552280_ProficiencyTableSeeding.cs" />
+    <Compile Include="Migrations\202004080552280_ProficiencyTableSeeding.designer.cs">
+      <DependentUpon>202004080552280_ProficiencyTableSeeding.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,8 +83,11 @@
     <Content Include="ConfigurationSeed.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004060446256_SeedContent.resx">
-      <DependentUpon>202004060446256_SeedContent.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004071614452_DatabaseReset.resx">
+      <DependentUpon>202004071614452_DatabaseReset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004080552280_ProficiencyTableSeeding.resx">
+      <DependentUpon>202004080552280_ProficiencyTableSeeding.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

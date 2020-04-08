@@ -38,8 +38,7 @@ namespace DND5ECharacterSheet.Data
         [Required]
         [ForeignKey(nameof(AbilityIncreases))]
         public int IncreaseId { get; set; }
-        [Required]
-        public AbilityIncrease AbilityIncreases { get; set; }
+        public virtual AbilityIncrease AbilityIncreases { get; set; }
 
         public string AgeRange { get; set; }
 
@@ -66,7 +65,7 @@ namespace DND5ECharacterSheet.Data
     public class AbilityIncrease
     {
         public AbilityIncrease() { }
-        public AbilityIncrease(int? abil1, int? abil2, int? abil3, int? abil4, int? abil5, int? abil6)
+        public AbilityIncrease(int abil1, int abil2, int abil3, int abil4, int abil5, int abil6)
         {
             Strength = abil1;
             Dexterity = abil2;
@@ -79,11 +78,11 @@ namespace DND5ECharacterSheet.Data
         [Key]
         public int IncreaseId { get; set; }
 
-        public int? Strength { get; set; }
-        public int? Dexterity { get; set; }
-        public int? Constitution { get; set; }
-        public int? Intelligence { get; set; }
-        public int? Wisdom { get; set; }
-        public int? Charisma { get; set; }
+        public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Constitution { get; set; }
+        public int Intelligence { get; set; }
+        public int Wisdom { get; set; }
+        public int Charisma { get; set; }
     }
 }

@@ -29,6 +29,7 @@ namespace DND5ECharacterSheet.Data
         public DbSet<ClassSelection> Classes { get; set; }
         public DbSet<RaceSelection> Races { get; set; }
         public DbSet<AbilityIncrease> RaceBonuses { get; set; }
+        public DbSet<ClassProficiencies> ClassProficiencyList { get; set; }
 
         public static ApplicationDbContext Create()
         {
