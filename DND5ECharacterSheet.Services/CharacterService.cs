@@ -106,77 +106,118 @@ namespace DND5ECharacterSheet.Services
                     Id = entity.Id,
                     User = entity.User,
                     AddedBy = entity.User.UserName,
+
                     CharacterName = entity.CharacterName,
+
                     ClassId = entity.ClassId,
                     Class = entity.Class,
+
                     RaceId = entity.RaceId,
                     Race = entity.Race,
+
                     Strength = entity.BaseStrength + entity.Race.AbilityIncreases.Strength,
                     Dexterity = entity.BaseDexterity + entity.Race.AbilityIncreases.Dexterity,
                     Constitution = entity.BaseConstitution + entity.Race.AbilityIncreases.Constitution,
                     Intelligence = entity.BaseIntelligence + entity.Race.AbilityIncreases.Intelligence,
                     Wisdom = entity.BaseWisdom + entity.Race.AbilityIncreases.Wisdom,
                     Charisma = entity.BaseCharisma + entity.Race.AbilityIncreases.Charisma,
-                    StrengthSave = entity.Class.Proficiencies.StrengthSave ? ((entity.BaseStrength + entity.Race.AbilityIncreases.Strength - 10) / 2) + entity.ProficiencyBonus : entity.BaseStrength + entity.Race.AbilityIncreases.Strength,
+
+                    StrengthSave = entity.Class.Proficiencies.StrengthSave ? ((entity.BaseStrength + entity.Race.AbilityIncreases.Strength - 10) / 2) + entity.ProficiencyBonus : (entity.BaseStrength + entity.Race.AbilityIncreases.Strength - 10) / 2,
+                    DexteritySave = entity.Class.Proficiencies.DexteritySave ? ((entity.BaseDexterity + entity.Race.AbilityIncreases.Dexterity - 10) / 2) + entity.ProficiencyBonus : ((entity.BaseDexterity + entity.Race.AbilityIncreases.Dexterity - 10) / 2),
+                    ConstitutionSave = entity.Class.Proficiencies.ConstitutionSave ? ((entity.BaseConstitution + entity.Race.AbilityIncreases.Constitution - 10) / 2) + entity.ProficiencyBonus : ((entity.BaseConstitution + entity.Race.AbilityIncreases.Constitution - 10) / 2),
+                    IntelligenceSave = entity.Class.Proficiencies.IntelligenceSave ? ((entity.BaseIntelligence + entity.Race.AbilityIncreases.Intelligence - 10) / 2) + entity.ProficiencyBonus : ((entity.BaseIntelligence + entity.Race.AbilityIncreases.Intelligence - 10) / 2),
+                    WisdomSave = entity.Class.Proficiencies.WisdomSave ? ((entity.BaseWisdom + entity.Race.AbilityIncreases.Wisdom - 10) / 2) + entity.ProficiencyBonus : ((entity.BaseWisdom + entity.Race.AbilityIncreases.Wisdom - 10) / 2),
+                    CharismaSave = entity.Class.Proficiencies.CharismaSave ? ((entity.BaseCharisma + entity.Race.AbilityIncreases.Charisma - 10) / 2) + entity.ProficiencyBonus : ((entity.BaseCharisma + entity.Race.AbilityIncreases.Charisma - 10) / 2),
+
+                    LightArmour = entity.Class.Proficiencies.LightArmour ? "Light Armour," : null,
+                    MediumArmour = entity.Class.Proficiencies.MediumArmour ? "Medium Armour," : null,
+                    HeavyArmour = entity.Class.Proficiencies.HeavyArmour ? "Heavy Armour," : null,
+                    Shield = entity.Class.Proficiencies.Shield ? "Shield," : null,
+
+                    SimpleWeapons = entity.Class.Proficiencies.SimpleWeapons ? "Simple Weapons," : null,
+                    MartialWeapons = entity.Class.Proficiencies.MartialWeapons ? "Martial Weapons," : null,
+
+                    Acrobatics = entity.Class.Proficiencies.Acrobatics ? "Acrobatics," : null,
+                    AnimalHandling = entity.Class.Proficiencies.AnimalHandling ? "Animal Handling," : null,
+                    Arcana = entity.Class.Proficiencies.Arcana ? "Arcana," : null,
+                    Athletics = entity.Class.Proficiencies.Athletics ? "Athletics," : null,
+                    Deception = entity.Class.Proficiencies.Deception ? "Deception," : null,
+                    History = entity.Class.Proficiencies.History ? "History," : null,
+                    Insight = entity.Class.Proficiencies.Insight ? "Insight," : null,
+                    Intimidation = entity.Class.Proficiencies.Intimidation ? "Intimidation," : null,
+                    Investigation = entity.Class.Proficiencies.Investigation ? "Investigation," : null,
+                    Medicine = entity.Class.Proficiencies.Medicine ? "Medicine," : null,
+                    Nature = entity.Class.Proficiencies.Nature ? "Nature," : null,
+                    Perception = entity.Class.Proficiencies.Perception ? "Perception," : null,
+                    Performance = entity.Class.Proficiencies.Performance ? "Performance," : null,
+                    Persuasion = entity.Class.Proficiencies.Persuasion ? "Persuasion," : null,
+                    Religion = entity.Class.Proficiencies.Religion ? "Religion," : null,
+                    SleightOfHand = entity.Class.Proficiencies.SleightOfHand ? "Sleight Of Hand," : null,
+                    Stealth = entity.Class.Proficiencies.Stealth ? "Stealth," : null,
+                    Survival = entity.Class.Proficiencies.Survival ? "Survival," : null,
+
                     BaseStrength = entity.BaseStrength,
                     BaseDexterity = entity.BaseDexterity,
                     BaseConstitution = entity.BaseConstitution,
                     BaseIntelligence = entity.BaseIntelligence,
                     BaseWisdom = entity.BaseWisdom,
                     BaseCharisma = entity.BaseCharisma,
+                    
                     Level = entity.Level,
                     ExperiencePoints = entity.ExperiencePoints,
                     ProficiencyBonus = entity.ProficiencyBonus,
+                    
                     Inspiration = entity.Inspiration,
+                    
                     MaxHP = entity.MaxHitPoints,
                     CurrentHitPoints = entity.CurrentHitPoints,
                     TemporaryHitPoints = entity.TemporaryHitPoints
-                };
-            }
+    };
+}
 
             return null;
         }
 
         // UPDATE
         public async Task<bool> EditCharacterAsync(CharacterEdit model)
+{
+    if (_context.Characters.Count(e => e.Id == model.Id) != 0)
+    {
+        var entity = _context.Characters.Single(myChar => myChar.Id == model.Id);
+        if (entity != null)
         {
-            if (_context.Characters.Count(e => e.Id == model.Id) != 0)
+
+            entity.CharacterName = model.CharacterName;
+            entity.ClassId = model.ClassId;
+            entity.RaceId = model.RaceId;
+            entity.ExperiencePoints = model.ExperiencePoints;
+            entity.Inspiration = model.Inspiration;
+            entity.CurrentHitPoints = model.CurrentHitPoints;
+            entity.TemporaryHitPoints = model.TemporaryHitPoints;
+
+            if (await _context.SaveChangesAsync() == 1)
             {
-                var entity = _context.Characters.Single(myChar => myChar.Id == model.Id);
-                if (entity != null)
-                {
-
-                    entity.CharacterName = model.CharacterName;
-                    entity.ClassId = model.ClassId;
-                    entity.RaceId = model.RaceId;
-                    entity.ExperiencePoints = model.ExperiencePoints;
-                    entity.Inspiration = model.Inspiration;
-                    entity.CurrentHitPoints = model.CurrentHitPoints;
-                    entity.TemporaryHitPoints = model.TemporaryHitPoints;
-
-                    if (await _context.SaveChangesAsync() == 1)
-                    {
-                        return true;
-                    }
-                    return false;
-                }
-                return false;
+                return true;
             }
             return false;
         }
+        return false;
+    }
+    return false;
+}
 
-        // DELETE
-        public async Task<bool> DeleteCharacterAsync(int? id)
-        {
-            var entity = _context.Characters.Single(e => e.Id == id);
+// DELETE
+public async Task<bool> DeleteCharacterAsync(int? id)
+{
+    var entity = _context.Characters.Single(e => e.Id == id);
 
-            if (entity != null)
-            {
-                _context.Characters.Remove(entity);
-                return await _context.SaveChangesAsync() == 1;
-            }
+    if (entity != null)
+    {
+        _context.Characters.Remove(entity);
+        return await _context.SaveChangesAsync() == 1;
+    }
 
-            return false;
-        }
+    return false;
+}
     }
 }

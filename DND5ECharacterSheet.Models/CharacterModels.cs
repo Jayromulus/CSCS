@@ -109,34 +109,34 @@ namespace DND5ECharacterSheet.Models
         public int TemporaryHitPoints { get; set; }
 
         public int StrengthSave { get; set; }
-        //    DexteritySave = dex;
-        //    ConstitutionSave = con;
-        //    IntelligenceSave = sma;
-        //    WisdomSave = wis;
-        //    CharismaSave = cha;
-        //    LightArmour = la;
-        //    MediumArmour = ma;
-        //    HeavyArmour = ha;
-        //    Shield = sh;
-        //    SimpleWeapons = sw;
-        //    MartialWeapons = mw;
-        //    Acrobatics = acro;
-        //    AnimalHandling = anim;
-        //    Arcana = arc;
-        //    Athletics = ath;
-        //    Deception = dec;
-        //    History = his;
-        //    Insight = ins;
-        //    Intimidation = scare;
-        //    Investigation = invest;
-        //    Medicine = med;
-        //    Nature = nat;
-        //    Perception = perc;
-        //    Performance = perf;
-        //    Persuasion = pers;
-        //    Religion = rel;
-        //    SleightOfHand = soh;
-        //    Stealth = ste;
-        //    Survival = sur;
+        public int DexteritySave { get; set; }
+        public int ConstitutionSave { get; set; }
+        public int IntelligenceSave { get; set; }
+        public int WisdomSave { get; set; }
+        public int CharismaSave { get; set; }
+        public string LightArmour { get; set; }
+        public string MediumArmour { get; set; }
+        public string HeavyArmour { get; set; }
+        public string Shield { get; set; }
+        public string SimpleWeapons { get; set; }
+        public string MartialWeapons { get; set; }
+        public string Acrobatics { get; set; }
+        public string AnimalHandling { get; set; }
+        public string Arcana { get; set; }
+        public string Athletics { get; set; }
+        public string Deception { get; set; }
+        public string History { get; set; }
+        public string Insight { get; set; }
+        public string Intimidation { get; set; }
+        public string Investigation { get; set; }
+        public string Medicine { get; set; }
+        public string Nature { get; set; }
+        public string Perception { get; set; }
+        public string Performance { get; set; }
+        public string Persuasion { get; set; }
+        public string Religion { get; set; }
+        public string SleightOfHand { get; set; }
+        public string Stealth { get; set; }
+        public string Survival { get; set; }
     }
 }

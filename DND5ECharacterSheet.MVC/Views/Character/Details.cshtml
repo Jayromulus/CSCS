@@ -11,30 +11,103 @@
     <hr />
 
 
-    
+
+    <div class="row">
+        <div class="col-sm-6">
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.AddedBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AddedBy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CharacterName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CharacterName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Class)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Class.ClassName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Race)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Race.RaceName)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-sm-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.MaxHP)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MaxHP)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CurrentHitPoints)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CurrentHitPoints)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TemporaryHitPoints)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TemporaryHitPoints)
+                </dd>
+            </dl>
+        </div>
+    </div>
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.AddedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AddedBy)
-        </dd>
+        
 
         <dt>
-            @Html.DisplayNameFor(model => model.CharacterName)
+            @Html.DisplayNameFor(model => model.Class.Proficiencies)
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Class)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Class.ClassName)
+        <dd id="profs">
+            @Html.DisplayFor(model => model.LightArmour)
+            @Html.DisplayFor(model => model.MediumArmour)
+            @Html.DisplayFor(model => model.HeavyArmour)
+            @Html.DisplayFor(model => model.Shield)
+            @Html.DisplayFor(model => model.SimpleWeapons)
+            @Html.DisplayFor(model => model.Acrobatics)
+            @Html.DisplayFor(model => model.AnimalHandling)
+            @Html.DisplayFor(model => model.Arcana)
+            @Html.DisplayFor(model => model.Athletics)
+            @Html.DisplayFor(model => model.Deception)
+            @Html.DisplayFor(model => model.History)
+            @Html.DisplayFor(model => model.Insight)
+            @Html.DisplayFor(model => model.Intimidation)
+            @Html.DisplayFor(model => model.Investigation)
+            @Html.DisplayFor(model => model.Medicine)
+            @Html.DisplayFor(model => model.Nature)
+            @Html.DisplayFor(model => model.Perception)
+            @Html.DisplayFor(model => model.Performance)
+            @Html.DisplayFor(model => model.Persuasion)
+            @Html.DisplayFor(model => model.Religion)
+            @Html.DisplayFor(model => model.SleightOfHand)
+            @Html.DisplayFor(model => model.Stealth)
+            @Html.DisplayFor(model => model.Survival)
         </dd>
 
         <dt>
@@ -46,12 +119,46 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Race)
+            @Html.DisplayNameFor(model => model.Class.Proficiencies.DexteritySave)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Race.RaceName)
+            @Html.DisplayFor(model => model.DexteritySave)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class.Proficiencies.ConstitutionSave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConstitutionSave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class.Proficiencies.IntelligenceSave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IntelligenceSave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class.Proficiencies.WisdomSave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WisdomSave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class.Proficiencies.CharismaSave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharismaSave)
+        </dd>
+
+        
 
         <dt>
             @Html.DisplayNameFor(model => model.Strength)
@@ -133,29 +240,7 @@
             @Html.DisplayFor(model => model.Inspiration)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MaxHP)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MaxHP)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CurrentHitPoints)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CurrentHitPoints)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TemporaryHitPoints)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TemporaryHitPoints)
-        </dd>
 
     </dl>
 
@@ -167,10 +252,7 @@
 </p>
 
 <script>
-    let base = document.getElementById("base-strength")
+    let profs = document.getElementById("profs")
 
-    let bstat = base.value
-    console.log(race)
-
-    document.getElementById("combined-strength").innerText = bstat
+    profs.innerText = profs.innerText.substring(0, profs.innerText.length - 1)
 </script>

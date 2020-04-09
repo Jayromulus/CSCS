@@ -131,6 +131,7 @@
                     "Dwarven, Common" // LANGUAGES
                 ),
                 new RaceSelection("Mountain Dwarf", 2, "50 - 350", 'M', 25, false, null, true, 60, "Battleaxe, Handaxe, Throwing Hammer, Warhammer, Light Armour, Medium Armour, Smith's Tools, Brewer's Tools, Mason's Tools", "Dwarven Resilience, Stonecunning", "Dwarven, Common"),
+                new RaceSelection("Mountain Dwarf", 2, "50 - 350", 'M', 25, false, null, true, 60, "Battleaxe, Handaxe, Throwing Hammer, Warhammer, Light Armour, Medium Armour, Smith's Tools, Brewer's Tools, Mason's Tools", "Dwarven Resilience, Stonecunning", "Dwarven, Common"),
                 new RaceSelection("High Elf", 3, "100 - 750", 'M', 35, false, null, true, 60, "Perception, Longsword, Shortsword, Longbow, Shortbow", "Fey Ancestry, Trance, Cantrip, Extra Language", "Common, Elvish"),
                 new RaceSelection("Wood Elf", 4, "100 - 750", 'M', 30, false, null, true, 60, "Perception, Longsword, Shortsword, Longbow, Shortbow", "Fey Ancestry, Trance, Mask of the Wild", "Common, Elvish"),
                 new RaceSelection("Dark Elf", 5, "100 - 750", 'M', 30, false, null, true, 120, "Perception, Rapier, Shortsword, Hand Crossbow", "Fey Ancestry, Trance, Sunlight Sensitivity, Drow Magic", "Common, Elvish"),
