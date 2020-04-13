@@ -91,7 +91,7 @@
             //context.SaveChanges();
 
             context.Classes.AddOrUpdate(
-                cl => cl.ClassName,
+                cl => cl.Id,
                 new ClassSelection
                 (
                     "Barbarian", // CLASS NAME
@@ -115,7 +115,7 @@
             //context.SaveChanges();
 
             context.Races.AddOrUpdate(
-                ra => ra.RaceName,
+                ra => ra.Id,
                 new RaceSelection(
                     "Hill Dwarf", // RACE NAME (SUBRACE)
                     1, // ABILITY SCORE BOOST
@@ -157,7 +157,7 @@
             //context.SaveChanges();
 
             context.Armours.AddOrUpdate(
-                a => a.Name,
+                a => a.Id,
                 new Armour
                 (
                     "Padded", // NAME
@@ -182,8 +182,26 @@
                 new Armour("Splint", 60, 200, 4, 17, 0, 13, true, "Heavy"),
                 new Armour("Plate", 65, 1500, 4, 18, 0, 15, true, "Heavy"),
                 new Armour("Shield", 6, 10, 4, 2, 0, null, false, "Shield")
-
             );
+
+            context.Weapons.AddOrUpdate(
+                wea => wea.Id,
+                new Weapon
+                (
+                    "Club", 
+                    2, // WEIGHT
+                    1, // COST
+                    2, // CURRENCY REQUIRED (ENUM INDEX) [1 = copper, 2 = silver, 3 = electrum, 4 = gold, 5 = platinum]
+                    1, // DAMAGE DIE AMOUNT
+                    4, // DAMAGE DIE SIZE
+                    1, // DAMAGE TYPE [1 = bludgeoning, 2 = piercing, 3 = slashing]
+                    false, // MARTIAL
+                    true, // MELEE
+                    "Light" // PROPERTIES
+                ),
+                new Weapon("Dagger", 2, 1, 2, 1, 4, 1, false, true, "Light")
+            );
+
 
             context.SaveChanges();
             //  This method will be called after migrating to the latest version.

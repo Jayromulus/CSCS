@@ -31,6 +31,7 @@ namespace DND5ECharacterSheet.Data
         public DbSet<AbilityIncrease> RaceBonuses { get; set; }
         public DbSet<ClassProficiencies> ClassProficiencyList { get; set; }
         public DbSet<Armour> Armours { get; set; }
+        public DbSet<Weapon> Weapons { get; set; }
 
         public static ApplicationDbContext Create()
         {
