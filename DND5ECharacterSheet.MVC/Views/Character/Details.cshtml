@@ -10,487 +10,304 @@
     <h4>CharacterDetail</h4>
     <hr />
 
-
-
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-2"><h4><a onclick="mainDisplay()">MAIN</a></h4></div>
+        <div class="col-sm-2"><h4><a onclick="tableDisplay()">TABLE</a></h4></div>
+        <div class="col-sm-8"></div>
+    </div>
 
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.AddedBy)
-                </dt>
+    <div id="main" style="display:contents">
+        <div class="row">
+            <div class="col-sm-4">
 
-                <dd>
-                    @Html.DisplayFor(model => model.AddedBy)
-                </dd>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AddedBy)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.CharacterName)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.AddedBy)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.CharacterName)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CharacterName)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Class)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CharacterName)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Class.ClassName)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Race)
-                </dt>
+                    <dd id="class-name">
+                        @Html.DisplayFor(model => model.Class.ClassName)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Race.RaceName)
-                </dd>
-            </dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Race)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Race.RaceName)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-sm-3">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ExperiencePoints)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ExperiencePoints)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Level)
+                    </dt>
+
+                    <dd id="level">
+                        @Html.DisplayFor(model => model.Level)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProficiencyBonus)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ProficiencyBonus)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Inspiration)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Inspiration)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-3">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MaxHP)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MaxHP)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CurrentHitPoints)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CurrentHitPoints)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TemporaryHitPoints)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TemporaryHitPoints)
+                    </dd>
+                </dl>
+            </div>
         </div>
-        <div class="col-sm-3">
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.ExperiencePoints)
-                </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.ExperiencePoints)
-                </dd>
+        <div class="row">
+            <div class="col-sm-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Strength)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Level)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Strength) (@Html.DisplayFor(model => model.StrengthMod))
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Level)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Dexterity)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.ProficiencyBonus)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Dexterity) (@Html.DisplayFor(model => model.DexterityMod))
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.ProficiencyBonus)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Constitution)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Inspiration)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Constitution) (@Html.DisplayFor(model => model.ConstitutionMod))
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Inspiration)
-                </dd>
-            </dl>
-        </div>
-        <div class="col-sm-2">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Intelligence)
+                    </dt>
 
-        </div>
-        <div class="col-sm-3">
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.MaxHP)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Intelligence) (@Html.DisplayFor(model => model.IntelligenceMod))
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.MaxHP)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Wisdom)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.CurrentHitPoints)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Wisdom) (@Html.DisplayFor(model => model.WisdomMod))
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.CurrentHitPoints)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Charisma)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.TemporaryHitPoints)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Charisma) (@Html.DisplayFor(model => model.CharismaMod))
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-sm-4">
+                <dl class="dl-horizontal">
 
-                <dd>
-                    @Html.DisplayFor(model => model.TemporaryHitPoints)
-                </dd>
-            </dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class.Proficiencies.StrengthSave)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.StrengthSave)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class.Proficiencies.DexteritySave)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DexteritySave)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class.Proficiencies.ConstitutionSave)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ConstitutionSave)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class.Proficiencies.IntelligenceSave)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.IntelligenceSave)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class.Proficiencies.WisdomSave)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.WisdomSave)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class.Proficiencies.CharismaSave)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CharismaSave)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-sm-4">
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class.Proficiencies)
+                    </dt>
+
+                    <dd id="profs">
+                        @Html.DisplayFor(model => model.LightArmour)
+                        @Html.DisplayFor(model => model.MediumArmour)
+                        @Html.DisplayFor(model => model.HeavyArmour)
+                        @Html.DisplayFor(model => model.Shield)
+                        @Html.DisplayFor(model => model.SimpleWeapons)
+                        @Html.DisplayFor(model => model.Acrobatics)
+                        @Html.DisplayFor(model => model.AnimalHandling)
+                        @Html.DisplayFor(model => model.Arcana)
+                        @Html.DisplayFor(model => model.Athletics)
+                        @Html.DisplayFor(model => model.Deception)
+                        @Html.DisplayFor(model => model.History)
+                        @Html.DisplayFor(model => model.Insight)
+                        @Html.DisplayFor(model => model.Intimidation)
+                        @Html.DisplayFor(model => model.Investigation)
+                        @Html.DisplayFor(model => model.Medicine)
+                        @Html.DisplayFor(model => model.Nature)
+                        @Html.DisplayFor(model => model.Perception)
+                        @Html.DisplayFor(model => model.Performance)
+                        @Html.DisplayFor(model => model.Persuasion)
+                        @Html.DisplayFor(model => model.Religion)
+                        @Html.DisplayFor(model => model.SleightOfHand)
+                        @Html.DisplayFor(model => model.Stealth)
+                        @Html.DisplayFor(model => model.Survival)
+                    </dd>
+                </dl>
+            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-4">
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.Strength)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Strength) (@Html.DisplayFor(model => model.StrengthMod))
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Dexterity)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Dexterity) (@Html.DisplayFor(model => model.DexterityMod))
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Constitution)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Constitution) (@Html.DisplayFor(model => model.ConstitutionMod))
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Intelligence)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Intelligence) (@Html.DisplayFor(model => model.IntelligenceMod))
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Wisdom)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Wisdom) (@Html.DisplayFor(model => model.WisdomMod))
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Charisma)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Charisma) (@Html.DisplayFor(model => model.CharismaMod))
-                </dd>
-            </dl>
-        </div>
-        <div class="col-sm-4">
-            <dl class="dl-horizontal">
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Class.Proficiencies.StrengthSave)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.StrengthSave)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Class.Proficiencies.DexteritySave)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.DexteritySave)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Class.Proficiencies.ConstitutionSave)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.ConstitutionSave)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Class.Proficiencies.IntelligenceSave)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.IntelligenceSave)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Class.Proficiencies.WisdomSave)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.WisdomSave)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Class.Proficiencies.CharismaSave)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.CharismaSave)
-                </dd>
-            </dl>
-        </div>
-        <div class="col-sm-4">
-            <dl>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Class.Proficiencies)
-                </dt>
-
-                <dd id="profs">
-                    @Html.DisplayFor(model => model.LightArmour)
-                    @Html.DisplayFor(model => model.MediumArmour)
-                    @Html.DisplayFor(model => model.HeavyArmour)
-                    @Html.DisplayFor(model => model.Shield)
-                    @Html.DisplayFor(model => model.SimpleWeapons)
-                    @Html.DisplayFor(model => model.Acrobatics)
-                    @Html.DisplayFor(model => model.AnimalHandling)
-                    @Html.DisplayFor(model => model.Arcana)
-                    @Html.DisplayFor(model => model.Athletics)
-                    @Html.DisplayFor(model => model.Deception)
-                    @Html.DisplayFor(model => model.History)
-                    @Html.DisplayFor(model => model.Insight)
-                    @Html.DisplayFor(model => model.Intimidation)
-                    @Html.DisplayFor(model => model.Investigation)
-                    @Html.DisplayFor(model => model.Medicine)
-                    @Html.DisplayFor(model => model.Nature)
-                    @Html.DisplayFor(model => model.Perception)
-                    @Html.DisplayFor(model => model.Performance)
-                    @Html.DisplayFor(model => model.Persuasion)
-                    @Html.DisplayFor(model => model.Religion)
-                    @Html.DisplayFor(model => model.SleightOfHand)
-                    @Html.DisplayFor(model => model.Stealth)
-                    @Html.DisplayFor(model => model.Survival)
-                </dd>
-            </dl>
+    <div id="table" style="display:none">
+        <div class="container">
+            <div class="row">
+                @switch (Model.Class.ClassName)
+                {
+                    case "Barbarian":
+                        @Html.Partial("BarbarianTable")
+                        break;
+                    case "Bard":
+                        @Html.Partial("BardTable")
+                        break;
+                    case "Cleric":
+                        @Html.Partial("ClericTable")
+                        break;
+                    case "Druid":
+                        @Html.Partial("DruidTable")
+                        break;
+                    case "Fighter":
+                        @Html.Partial("FighterTable")
+                        break;
+                    case "Monk":
+                        @Html.Partial("MonkTable")
+                        break;
+                    case "Paladin":
+                        @Html.Partial("PaladinTable")
+                        break;
+                    case "Ranger":
+                        @Html.Partial("RangerTable")
+                        break;
+                    case "Rogue":
+                        @Html.Partial("RogueTable")
+                        break;
+                    case "Sorcerer":
+                        @Html.Partial("SorcererTable")
+                        break;
+                    case "Warlock":
+                        @Html.Partial("WarlockTable")
+                        break;
+                    case "Wizard":
+                        @Html.Partial("WizardTable")
+                        break;
+                    default:
+                        break;
+                }
+            </div>
         </div>
     </div>
-
-    <div class="row">
-        @switch (Model.Class.ClassName)
-        {
-            case "Barbarian":
-                <table class="table">
-                    <tr>
-                        <th>Level</th>
-                        <th>Features</th>
-                        <th>Rages</th>
-                        <th>Rage Damage</th>
-                    </tr>
-                    @*LEVEL 1*@
-                    <tr>
-                        <td>1</td>
-                        <td>Rage, Unarmoured Defense</td>
-                        <td>2</td>
-                        <td>+2</td>
-                    </tr>
-                    @*LEVEL 2*@
-                    <tr>
-                        <td>2</td>
-                        <td>Reckless Attack, Danger Sense</td>
-                        <td>2</td>
-                        <td>+2</td>
-                    </tr>
-                    @*LEVEL 3*@
-                    <tr>
-                        <td>3</td>
-                        <td>Primal Path</td>
-                        <td>3</td>
-                        <td>+2</td>
-                    </tr>
-                    @*LEVEL 4*@
-                    <tr>
-                        <td>4</td>
-                        <td>Ability Score Improvement</td>
-                        <td>3</td>
-                        <td>+2</td>
-                    </tr>
-                    @*LEVEL 5*@
-                    <tr>
-                        <td>5</td>
-                        <td>Extra Attack, Fast Movement</td>
-                        <td>3</td>
-                        <td>+2</td>
-                    </tr>
-                    @*LEVEL 6*@
-                    <tr>
-                        <td>6</td>
-                        @*maybe make this change according to the path they chose*@
-                        <td>Path Feature</td>
-                        <td>4</td>
-                        <td>+2</td>
-                    </tr>
-                    @*LEVEL 7*@
-                    <tr>
-                        <td>7</td>
-                        <td>Feral Instinct</td>
-                        <td>4</td>
-                        <td>+2</td>
-                    </tr>
-                    @*LEVEL 8*@
-                    <tr>
-                        <td>8</td>
-                        <td>Ability Score Improvement</td>
-                        <td>3</td>
-                        <td>+2</td>
-                    </tr>
-                    @*LEVEL 9*@
-                    <tr>
-                        <td>9</td>
-                        <td>Brutal Critical (1 die)</td>
-                        <td>4</td>
-                        <td>+3</td>
-                    </tr>
-                    @*LEVEL 10*@
-                    <tr>
-                        <td>10</td>
-                        @*maybe make this change according to the path they chose*@
-                        <td>Path Feature</td>
-                        <td>4</td>
-                        <td>+3</td>
-                        @*LEVEL 11*@
-                    <tr>
-                        <td>11</td>
-                        <td>Relentless Rage</td>
-                        <td>4</td>
-                        <td>+3</td>
-                    </tr>
-                    @*LEVEL 12*@
-                    <tr>
-                        <td>12</td>
-                        <td>Ability Score Improvement</td>
-                        <td>5</td>
-                        <td>+2</td>
-                    </tr>
-                    @*LEVEL 13*@
-                    <tr>
-                        <td>13</td>
-                        <td>Brutal Critical (2 die)</td>
-                        <td>5</td>
-                        <td>+3</td>
-                    </tr>
-                    @*LEVEL 14*@
-                    <tr>
-                        <td>14</td>
-                        <td>Path Feature</td>
-                        <td>5</td>
-                        <td>+3</td>
-                    </tr>
-                    @*LEVEL 15*@
-                    <tr>
-                        <td>15</td>
-                        <td>Persistent Rage</td>
-                        <td>5</td>
-                        <td>+3</td>
-                    </tr>
-                    @*LEVEL 16*@
-                    <tr>
-                        <td>16</td>
-                        <td>Ability Score Improvement</td>
-                        <td>5</td>
-                        <td>+4</td>
-                    </tr>
-                    @*LEVEL 17*@
-                    <tr>
-                        <td>17</td>
-                        <td>Brutal Critical (3 die)</td>
-                        <td>6</td>
-                        <td>+4</td>
-                    </tr>
-                    @*LEVEL 18*@
-                    <tr>
-                        <td>18</td>
-                        <td>Indomitable Might</td>
-                        <td>6</td>
-                        <td>+4</td>
-                    </tr>
-                    @*LEVEL 19*@
-                    <tr>
-                        <td>19</td>
-                        <td>Ability Score Improvement</td>
-                        <td>6</td>
-                        <td>+4</td>
-                    </tr>
-                    @*LEVEL 20*@
-                    <tr>
-                        <td>10</td>
-                        <td>Primal Champion</td>
-                        <td>Unlimited</td>
-                        <td>+4</td>
-                    </tr>
-                </table>
-                break;
-            case "Bard":
-                <table class="table">
-                    <tr>
-                        <th>Bard Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Cleric":
-                <table class="table">
-                    <tr>
-                        <th>Cleric Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Druid":
-                <table class="table">
-                    <tr>
-                        <th>Druid Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Figher":
-                <table class="table">
-                    <tr>
-                        <th>Fighter Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Monk":
-                <table class="table">
-                    <tr>
-                        <th>Monk Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Paladin":
-                <table class="table">
-                    <tr>
-                        <th>Paladin Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Ranger":
-                <table class="table">
-                    <tr>
-                        <th>Ranger Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Rogue":
-                <table class="table">
-                    <tr>
-                        <th>Rogue Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Sorcerer":
-                <table class="table">
-                    <tr>
-                        <th>Sorcerer Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Warlock":
-                <table class="table">
-                    <tr>
-                        <th>Warlock Table</th>
-                    </tr>
-                </table>
-                break;
-            case "Wizard":
-                <table class="table">
-                    <tr>
-                        <th>Wizard Table</th>
-                    </tr>
-                </table>
-                break;
-            default:
-                break;
-        }
-    </div>
-
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
@@ -501,4 +318,25 @@
     let profs = document.getElementById("profs")
 
     profs.innerText = profs.innerText.substring(0, profs.innerText.length - 1)
+
+    let main = document.getElementById("main")
+    let table = document.getElementById("table")
+
+    main.style.display = "initial"
+
+    table.style.display = "none"
+
+    function mainDisplay() {
+        console.log("change styles")
+        main.style.display = "initial"
+        table.style.display = "none"
+    }
+
+    function tableDisplay() {
+        console.log("change styles")
+        main.style.display = "none"
+        table.style.display = "initial"
+    }
 </script>
+
+<script src="~/Scripts/table-style.js"></script>

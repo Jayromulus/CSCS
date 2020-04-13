@@ -293,6 +293,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\table-style.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -342,6 +343,18 @@
     <Content Include="Views\Character\Details.cshtml" />
     <Content Include="Views\Character\Delete.cshtml" />
     <Content Include="Views\Character\Index.cshtml" />
+    <Content Include="Views\Character\BarbarianTable.cshtml" />
+    <Content Include="Views\Character\BardTable.cshtml" />
+    <Content Include="Views\Character\ClericTable.cshtml" />
+    <Content Include="Views\Character\DruidTable.cshtml" />
+    <Content Include="Views\Character\FighterTable.cshtml" />
+    <Content Include="Views\Character\MonkTable.cshtml" />
+    <Content Include="Views\Character\PaladinTable.cshtml" />
+    <Content Include="Views\Character\RangerTable.cshtml" />
+    <Content Include="Views\Character\RogueTable.cshtml" />
+    <Content Include="Views\Character\SorcererTable.cshtml" />
+    <Content Include="Views\Character\WarlockTable.cshtml" />
+    <Content Include="Views\Character\WizardTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

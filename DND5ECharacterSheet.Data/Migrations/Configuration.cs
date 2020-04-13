@@ -61,7 +61,7 @@
                 new ClassProficiencies(false, false, false, false, true, true, true, false, false, false, true, false, false, false, true, false, true, true, false, true, true, false, true, false, false, false, true, false, false, false),
                 new ClassProficiencies(false, false, false, true, true, false, false, false, false, false, false, false, false, false, true, false, false, true, true, false, true, true, false, false, false, false, true, false, false, false)
             );
-            context.SaveChanges();
+            //context.SaveChanges();
 
             context.RaceBonuses.AddOrUpdate
             (
@@ -88,7 +88,7 @@
                 new AbilityIncrease(2, 0, 1, 0, 0, 0),
                 new AbilityIncrease(0, 0, 0, 1, 0, 2)
             );
-            context.SaveChanges();
+            //context.SaveChanges();
 
             context.Classes.AddOrUpdate(
                 cl => cl.ClassName,
@@ -112,10 +112,10 @@
                 new ClassSelection("Warlock", "A wielder of magic that is derived from a bargain with an extraplanar entity", 6, "Charisma", 11),
                 new ClassSelection("Wizard", "A scholarly magic user capable of manupulating the structure of reality", 6, "Intelligence", 12)
             );
-            context.SaveChanges();
+            //context.SaveChanges();
 
             context.Races.AddOrUpdate(
-                ra => ra.Id,
+                ra => ra.RaceName,
                 new RaceSelection(
                     "Hill Dwarf", // RACE NAME (SUBRACE)
                     1, // ABILITY SCORE BOOST
@@ -154,6 +154,37 @@
                 new RaceSelection("Half-Orc", 12, "14 - 70", 'M', 30, false, null, true, 60, "Intimidation", "Relentless Endurance, Savage Attacks", "Common, Orc"),
                 new RaceSelection("Tiefling", 13, "18 - 85", 'M', 30, false, null, true, 60, "No Bonus Proficiencies", "Hellish Resistance, Infernal Legacy", "Common, Infernal")
             );
+            //context.SaveChanges();
+
+            context.Armours.AddOrUpdate(
+                a => a.Name,
+                new Armour
+                (
+                    "Padded", // NAME
+                    8, // WEIGHT
+                    5, // COST
+                    4, // CURRENCY REQUIRED (ENUM INDEX) [1 = copper, 2 = silver, 3 = electrum, 4 = gold, 5 = platinum]
+                    11, // ARMOUR CLASS
+                    null, // MAX DEXTERITY
+                    null, // MIN STRENGTH
+                    true, // STEALTH DISADVANTAGE
+                    "Light" // ARMOUR TYPE
+                ),
+                new Armour("Leather", 10, 10, 4, 11, null, null, false, "Light"),
+                new Armour("Studded Leather", 13, 45, 4, 12, null, null, false, "Light"),
+                new Armour("Hide", 12, 10, 4, 12, 2, null, false, "Medium"),
+                new Armour("Chain Shirt", 20, 50, 4, 13, 2, null, false, "Medium"),
+                new Armour("Scale Mail", 45, 50, 4, 14, 2, null, true, "Medium"),
+                new Armour("Breastplate", 20, 400, 4, 14, 2, null, false, "Medium"),
+                new Armour("Half Plate", 40, 750, 4, 15, 2, null, true, "Medium"),
+                new Armour("Ring Mail", 40, 30, 4, 14, 0, null, true, "Heavy"),
+                new Armour("Chain Mail", 55, 75, 4, 16, 0, 13, true, "Heavy"),
+                new Armour("Splint", 60, 200, 4, 17, 0, 13, true, "Heavy"),
+                new Armour("Plate", 65, 1500, 4, 18, 0, 15, true, "Heavy"),
+                new Armour("Shield", 6, 10, 4, 2, 0, null, false, "Shield")
+
+            );
+
             context.SaveChanges();
             //  This method will be called after migrating to the latest version.
 
