@@ -162,62 +162,62 @@ namespace DND5ECharacterSheet.Services
                     BaseIntelligence = entity.BaseIntelligence,
                     BaseWisdom = entity.BaseWisdom,
                     BaseCharisma = entity.BaseCharisma,
-                    
+
                     Level = entity.Level,
                     ExperiencePoints = entity.ExperiencePoints,
                     ProficiencyBonus = entity.ProficiencyBonus,
-                    
+
                     Inspiration = entity.Inspiration,
-                    
+
                     MaxHP = entity.MaxHitPoints,
                     CurrentHitPoints = entity.CurrentHitPoints,
                     TemporaryHitPoints = entity.TemporaryHitPoints
-    };
-}
+                };
+            }
 
             return null;
         }
 
         // UPDATE
         public async Task<bool> EditCharacterAsync(CharacterEdit model)
-{
-    if (_context.Characters.Count(e => e.Id == model.Id) != 0)
-    {
-        var entity = _context.Characters.Single(myChar => myChar.Id == model.Id);
-        if (entity != null)
         {
-
-            entity.CharacterName = model.CharacterName;
-            entity.ClassId = model.ClassId;
-            entity.RaceId = model.RaceId;
-            entity.ExperiencePoints = model.ExperiencePoints;
-            entity.Inspiration = model.Inspiration;
-            entity.CurrentHitPoints = model.CurrentHitPoints;
-            entity.TemporaryHitPoints = model.TemporaryHitPoints;
-
-            if (await _context.SaveChangesAsync() == 1)
+            if (_context.Characters.Count(e => e.Id == model.Id) != 0)
             {
-                return true;
+                var entity = _context.Characters.Single(myChar => myChar.Id == model.Id);
+                if (entity != null)
+                {
+
+                    entity.CharacterName = model.CharacterName;
+                    entity.ClassId = model.ClassId;
+                    entity.RaceId = model.RaceId;
+                    entity.ExperiencePoints = model.ExperiencePoints;
+                    entity.Inspiration = model.Inspiration;
+                    entity.CurrentHitPoints = model.CurrentHitPoints;
+                    entity.TemporaryHitPoints = model.TemporaryHitPoints;
+
+                    if (await _context.SaveChangesAsync() == 1)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+                return false;
             }
             return false;
         }
-        return false;
-    }
-    return false;
-}
 
-// DELETE
-public async Task<bool> DeleteCharacterAsync(int? id)
-{
-    var entity = _context.Characters.Single(e => e.Id == id);
+        // DELETE
+        public async Task<bool> DeleteCharacterAsync(int? id)
+        {
+            var entity = _context.Characters.Single(e => e.Id == id);
 
-    if (entity != null)
-    {
-        _context.Characters.Remove(entity);
-        return await _context.SaveChangesAsync() == 1;
-    }
+            if (entity != null)
+            {
+                _context.Characters.Remove(entity);
+                return await _context.SaveChangesAsync() == 1;
+            }
 
-    return false;
-}
+            return false;
+        }
     }
 }
