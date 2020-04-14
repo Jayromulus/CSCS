@@ -1,0 +1,82 @@
+﻿@model DND5ECharacterSheet.Models.ArmourDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ArmourDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightInPounds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightInPounds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostInCurrency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostInCurrency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArmourClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArmourClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxDexMod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxDexMod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinStrength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinStrength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StealthDisadvantage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StealthDisadvantage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArmourType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArmourType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

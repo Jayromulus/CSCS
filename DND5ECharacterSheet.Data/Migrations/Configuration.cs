@@ -188,7 +188,7 @@
                 wea => wea.Id,
                 new Weapon
                 (
-                    "Club", 
+                    "Club",
                     2, // WEIGHT
                     1, // COST
                     2, // CURRENCY REQUIRED (ENUM INDEX) [1 = copper, 2 = silver, 3 = electrum, 4 = gold, 5 = platinum]
@@ -200,7 +200,7 @@
                     "Light" // PROPERTIES
                 ),
                 new Weapon("Dagger", 2, 1, 2, 1, 4, 1, false, true, "Light")
-                // the rest of the weapon seeding goes here when you finish making the weapon/armour crud or if you are being a lazy bum who should get back to work instead of slacking off or sleeping on the job wow how lazy can you really get
+            // the rest of the weapon seeding goes here when you finish making the weapon/armour crud or if you are being a lazy bum who should get back to work instead of slacking off or sleeping on the job wow how lazy can you really get
             );
 
 

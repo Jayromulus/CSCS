@@ -357,6 +357,10 @@
     <Content Include="Views\Character\WarlockTable.cshtml" />
     <Content Include="Views\Character\WizardTable.cshtml" />
     <Content Include="Views\Armour\Index.cshtml" />
+    <Content Include="Views\Armour\Create.cshtml" />
+    <Content Include="Views\Armour\Edit.cshtml" />
+    <Content Include="Views\Armour\Details.cshtml" />
+    <Content Include="Views\Armour\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

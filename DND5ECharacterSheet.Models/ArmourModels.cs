@@ -89,6 +89,7 @@ namespace DND5ECharacterSheet.Models
 
     public class ArmourListItem
     {
+        public int ArmourId { get; set; }
         public string Name { get; set; }
 
         [Display(Name = "Cost")]

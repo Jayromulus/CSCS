@@ -64,13 +64,9 @@
     <Compile Include="Items\Armour.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Weapon.cs" />
-    <Compile Include="Migrations\202004122209167_maybeNoMoreDuplicates.cs" />
-    <Compile Include="Migrations\202004122209167_maybeNoMoreDuplicates.designer.cs">
-      <DependentUpon>202004122209167_maybeNoMoreDuplicates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004130419435_weaponsAdded.cs" />
-    <Compile Include="Migrations\202004130419435_weaponsAdded.designer.cs">
-      <DependentUpon>202004130419435_weaponsAdded.cs</DependentUpon>
+    <Compile Include="Migrations\202004131939543_Testing.cs" />
+    <Compile Include="Migrations\202004131939543_Testing.designer.cs">
+      <DependentUpon>202004131939543_Testing.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,11 +80,8 @@
     <Content Include="ConfigurationSeed.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004122209167_maybeNoMoreDuplicates.resx">
-      <DependentUpon>202004122209167_maybeNoMoreDuplicates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004130419435_weaponsAdded.resx">
-      <DependentUpon>202004130419435_weaponsAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004131939543_Testing.resx">
+      <DependentUpon>202004131939543_Testing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

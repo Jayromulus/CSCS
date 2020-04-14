@@ -35,6 +35,7 @@ namespace DND5ECharacterSheet.Services
 
             var armourList = entityList.Select(myArm => new ArmourListItem()
             {
+                ArmourId = myArm.Id,
                 Name = myArm.Name,
                 CostInCurrency = myArm.CostInCurrency,
                 CurrencyRequired = myArm.CurrencyRequired,
