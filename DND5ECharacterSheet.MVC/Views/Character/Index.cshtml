@@ -4,54 +4,60 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CharacterId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CharacterName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ClassName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RaceName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Level)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CharacterId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CharacterName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClassName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RaceName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Level)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.CharacterId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
-        </td>
-    </tr>
-}
+<div class="container">
 
-</table>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="row">
+            <div class="col-xs-12" style="padding: 5%">
+                <div class="card-background" style="border-radius: 5px; height: 15vh; line-height: 15vh; font-size: 20pt; text-align: center">
+                    <span style="color: black; text-decoration: none;">
+                        @Html.ActionLink("+ Add New Item", "Create")
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="row">
+                <div class="col-xs-12" style="padding: 5%">
+                    <div class="card-background" style="border-radius:5px; padding: 2.5% 5%; height: 15vh;">
+
+                        <div style="font-size: 17pt">
+                            @Html.DisplayFor(modelItem => item.CharacterName)
+
+                        </div>
+
+                        <div style="font-size: 13pt; text-align: right">
+                            @Html.DisplayFor(modelItem => item.RaceName)  @Html.DisplayFor(modelItem => item.ClassName)
+                            <br />
+                            Level: @Html.DisplayFor(modelItem => item.Level)
+                            
+                        </div>
+
+                        @if (item.AddedBy == ViewBag.CurrentUser)
+                        {
+                            <div>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.CharacterId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
+                            </div>
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Details", "Details", new { id = item.CharacterId })
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+

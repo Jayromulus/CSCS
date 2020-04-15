@@ -174,9 +174,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArmourController.cs" />
     <Compile Include="Controllers\CharacterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,6 +192,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -356,6 +359,16 @@
     <Content Include="Views\Character\SorcererTable.cshtml" />
     <Content Include="Views\Character\WarlockTable.cshtml" />
     <Content Include="Views\Character\WizardTable.cshtml" />
+    <Content Include="Views\Armour\Index.cshtml" />
+    <Content Include="Views\Armour\Create.cshtml" />
+    <Content Include="Views\Armour\Edit.cshtml" />
+    <Content Include="Views\Armour\Details.cshtml" />
+    <Content Include="Views\Armour\Delete.cshtml" />
+    <Content Include="Views\Weapon\Index.cshtml" />
+    <Content Include="Views\Weapon\Create.cshtml" />
+    <Content Include="Views\Weapon\Edit.cshtml" />
+    <Content Include="Views\Weapon\Delete.cshtml" />
+    <Content Include="Views\Weapon\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

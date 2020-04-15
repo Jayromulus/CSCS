@@ -57,8 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArmourService.cs" />
     <Compile Include="CharacterService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeaponService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DND5ECharacterSheet.Data\DND5ECharacterSheet.Data.csproj">

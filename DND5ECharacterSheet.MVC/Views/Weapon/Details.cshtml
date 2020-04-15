@@ -1,0 +1,82 @@
+﻿@model DND5ECharacterSheet.Models.WeaponDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WeaponDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightInPounds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightInPounds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostInCurrency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostInCurrency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DamageDieAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DamageDieAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DamageDieSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DamageDieSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMartialWeapon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMartialWeapon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMeleeWeapon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMeleeWeapon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Properties)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Properties)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WeaponId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

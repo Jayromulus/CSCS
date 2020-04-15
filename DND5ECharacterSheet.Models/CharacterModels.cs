@@ -46,6 +46,9 @@ namespace DND5ECharacterSheet.Models
         public string CharacterName { get; set; }
         //public virtual ClassSelection Class { get; set; }
         //public virtual RaceSelection Race { get; set; }
+        [ForeignKey(nameof(User))]
+        public string AddedBy { get; set; }
+        public virtual ApplicationUser User { get; set; }
         public string ClassName { get; set; }
         public string RaceName { get; set; }
         public int Level { get; set; }
@@ -104,15 +107,21 @@ namespace DND5ECharacterSheet.Models
         public int Level { get; set; }
         public int ProficiencyBonus { get; set; }
         public int Inspiration { get; set; }
-        public int MaxHP { get; set; }
+        public int MaxHP { get { return Level == 1 ? Class.HitDieSize + ConstitutionMod : Class.HitDieSize + ConstitutionMod + ((((Class.HitDieSize / 2) + 1) + ConstitutionMod) * (Level - 1)); } }
         public int CurrentHitPoints { get; set; }
         public int TemporaryHitPoints { get; set; }
 
+        [Display(Name = "Str Save")]
         public int StrengthSave { get; set; }
+        [Display(Name = "Dex Save")]
         public int DexteritySave { get; set; }
+        [Display(Name = "Con Save")]
         public int ConstitutionSave { get; set; }
+        [Display(Name = "Int Save")]
         public int IntelligenceSave { get; set; }
+        [Display(Name = "Wis Save")]
         public int WisdomSave { get; set; }
+        [Display(Name = "Cha Save")]
         public int CharismaSave { get; set; }
         public string LightArmour { get; set; }
         public string MediumArmour { get; set; }

@@ -1,0 +1,89 @@
+﻿body {
+    background-color: #555;
+    /*background: rgb(236,78,32);
+    background: linear-gradient(127deg, rgb(122,51,171) 0%, rgb(212,61,181) 65%, rgb(244,71,191) 100%);*/
+    /*background: linear-gradient(127deg, rgb(236,78,32) 0%, rgb(236,98,52) 65%, rgb(236,118,72) 100%);*/
+}
+
+.navbar-color {
+    /*background: rgb(255,171,113);
+    background: linear-gradient(127deg, rgba(34,34,255,.95) 0%, rgba(28,28,28,.95) 25%, rgba(22,22,22,.95) 100%);*/
+    background-color: #222222;
+    color: white;
+}
+
+.card-background {
+    /*background: rgb(255,171,113);
+    background: linear-gradient(127deg, rgba(22,22,22,.95) 0%, rgba(28,28,28,.95) 65%, rgba(34,34,255,.95) 100%);*/
+    /*color: white;*/
+    background: #f05a28;
+    background: linear-gradient(127deg, #f05a28 0%, #f7931e 95%);
+    color: white;
+    border-radius: 5px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightgray;
+    text-decoration: underline;
+}
+
+.details-height {
+    line-height: 15vh;
+}
+
+@media only screen and (max-width: 768px) {
+    .details-height {
+        line-height: 12.5vh
+    }
+
+    .prof-padding{
+        margin-bottom: 1.5%
+    }
+}
+
+th {
+    text-align: center;
+}
+
+.prof-padding {
+    padding: .5% 2.5%
+}
+
+
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/*
+    darkorange: f05a28
+    lightorange: f7931e
+    darktan: fff0bc
+    lighttan: fefcdb
+*/
+
+

@@ -61,9 +61,9 @@ namespace DND5ECharacterSheet.Data
         public int DamageDieAmount { get; set; }
         public int DamageDieSize { get; set; }
         public DamageTypes DamageType { get; set; }
-        public string Properties { get; set; }
         public bool IsMartialWeapon { get; set; } // ASSUMES SIMPLE IF NOT MARTIAL
         public bool IsMeleeWeapon { get; set; } // ASSUMES RANGED IF NOT MELEE
+        public string Properties { get; set; }
     }
 
 }

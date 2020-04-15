@@ -17,6 +17,9 @@ namespace DND5ECharacterSheet.MVC.Controllers
         // GET: Character
         public async Task<ActionResult> Index()
         {
+            var CurrentUserId = User.Identity.GetUserId();
+            ViewBag.CurrentUser = CurrentUserId;
+
             var service = GetCharacterService();
             return View(await service.GetAllCharactersAsync());
         }
@@ -24,6 +27,7 @@ namespace DND5ECharacterSheet.MVC.Controllers
         //GET: Character/Create
         public ActionResult Create()
         {
+
             var service = GetCharacterService();
             var raceList = new SelectList(service.GetRaceNames(), "RaceId", "RaceName");
             var classList = new SelectList(service.GetClassNames(), "ClassId", "ClassName");
