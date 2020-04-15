@@ -77,6 +77,7 @@ namespace DND5ECharacterSheet.Services
             // .Where(entity => entity.User.Id == _userId)
             var characterList = entityList.Select(myChar => new CharacterListItem()
             {
+                AddedBy = myChar.AddedBy,
                 CharacterId = myChar.Id,
                 CharacterName = myChar.CharacterName,
                 ClassName = myChar.Class.ClassName,
@@ -169,7 +170,6 @@ namespace DND5ECharacterSheet.Services
 
                     Inspiration = entity.Inspiration,
 
-                    MaxHP = entity.MaxHitPoints,
                     CurrentHitPoints = entity.CurrentHitPoints,
                     TemporaryHitPoints = entity.TemporaryHitPoints
                 };

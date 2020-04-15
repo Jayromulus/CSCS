@@ -7,14 +7,8 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CharacterDetail</h4>
+    <h4>@Html.DisplayFor(model => model.CharacterName)</h4>
     <hr />
-
-    <div class="row">
-        <div class="col-sm-2"><h4><a onclick="mainDisplay()">MAIN</a></h4></div>
-        <div class="col-sm-2"><h4><a onclick="tableDisplay()">TABLE</a></h4></div>
-        <div class="col-sm-8"></div>
-    </div>
 
     <div id="main" style="display:contents">
         <div class="row">
@@ -261,60 +255,61 @@
         </div>
     </div>
 
-    <div id="table" style="display:none">
-        <div class="container">
-            <div class="row">
-                @switch (Model.Class.ClassName)
-                {
-                    case "Barbarian":
-                        @Html.Partial("BarbarianTable")
-                        break;
-                    case "Bard":
-                        @Html.Partial("BardTable")
-                        break;
-                    case "Cleric":
-                        @Html.Partial("ClericTable")
-                        break;
-                    case "Druid":
-                        @Html.Partial("DruidTable")
-                        break;
-                    case "Fighter":
-                        @Html.Partial("FighterTable")
-                        break;
-                    case "Monk":
-                        @Html.Partial("MonkTable")
-                        break;
-                    case "Paladin":
-                        @Html.Partial("PaladinTable")
-                        break;
-                    case "Ranger":
-                        @Html.Partial("RangerTable")
-                        break;
-                    case "Rogue":
-                        @Html.Partial("RogueTable")
-                        break;
-                    case "Sorcerer":
-                        @Html.Partial("SorcererTable")
-                        break;
-                    case "Warlock":
-                        @Html.Partial("WarlockTable")
-                        break;
-                    case "Wizard":
-                        @Html.Partial("WizardTable")
-                        break;
-                    default:
-                        break;
-                }
+    <div class="container">
+        <div class="col-xs-12">
+            <div class="card-background" style="border-radius: 5px; font-size: 12pt; text-align: center; overflow-x: scroll">
+                
+                    @switch (Model.Class.ClassName)
+                    {
+                        case "Barbarian":
+                            @Html.Partial("BarbarianTable")
+                            break;
+                        case "Bard":
+                            @Html.Partial("BardTable")
+                            break;
+                        case "Cleric":
+                            @Html.Partial("ClericTable")
+                            break;
+                        case "Druid":
+                            @Html.Partial("DruidTable")
+                            break;
+                        case "Fighter":
+                            @Html.Partial("FighterTable")
+                            break;
+                        case "Monk":
+                            @Html.Partial("MonkTable")
+                            break;
+                        case "Paladin":
+                            @Html.Partial("PaladinTable")
+                            break;
+                        case "Ranger":
+                            @Html.Partial("RangerTable")
+                            break;
+                        case "Rogue":
+                            @Html.Partial("RogueTable")
+                            break;
+                        case "Sorcerer":
+                            @Html.Partial("SorcererTable")
+                            break;
+                        case "Warlock":
+                            @Html.Partial("WarlockTable")
+                            break;
+                        case "Wizard":
+                            @Html.Partial("WizardTable")
+                            break;
+                        default:
+                            break;
+                    }
             </div>
         </div>
     </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@*<p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
 
-<script>
+@*<script>
     let profs = document.getElementById("profs")
 
     profs.innerText = profs.innerText.substring(0, profs.innerText.length - 1)
@@ -337,6 +332,6 @@
         main.style.display = "none"
         table.style.display = "initial"
     }
-</script>
+</script>*@
 
 <script src="~/Scripts/table-style.js"></script>

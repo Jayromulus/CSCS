@@ -27,21 +27,30 @@
                 <div class="col-xs-12" style="padding: 5%">
                     <div class="card-background" style="border-radius:5px; padding: 2.5% 5%; height: 15vh;">
 
-                        <div style="font-size: 18pt">
+                        <div style="font-size: 17pt">
                             @Html.DisplayFor(modelItem => item.CharacterName)
 
                         </div>
 
-                        <div style="font-size: 14pt; text-align: right">
+                        <div style="font-size: 13pt; text-align: right">
                             @Html.DisplayFor(modelItem => item.RaceName)  @Html.DisplayFor(modelItem => item.ClassName)
                             <br />
                             Level: @Html.DisplayFor(modelItem => item.Level)
+                            
                         </div>
 
-
-                            @Html.ActionLink("Edit", "Edit", new { id = item.CharacterId }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
+                        @if (item.AddedBy == ViewBag.CurrentUser)
+                        {
+                            <div>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.CharacterId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.CharacterId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.CharacterId })
+                            </div>
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Details", "Details", new { id = item.CharacterId })
+                        }
 
 
                     </div>
