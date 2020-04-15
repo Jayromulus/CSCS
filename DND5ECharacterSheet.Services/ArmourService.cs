@@ -53,6 +53,7 @@ namespace DND5ECharacterSheet.Services
             {
                 return new ArmourDetails()
                 {
+                    ArmourId = entity.Id,
                     Name = entity.Name,
                     WeightInPounds = entity.WeightInPounds,
                     CostInCurrency = entity.CostInCurrency,
@@ -89,7 +90,6 @@ namespace DND5ECharacterSheet.Services
                     {
                         return true;
                     }
-
                     return false;
                 }
                 return false;
@@ -107,7 +107,6 @@ namespace DND5ECharacterSheet.Services
                 _context.Armours.Remove(entity);
                 return await _context.SaveChangesAsync() == 1;
             }
-
             return false;
         }
     }

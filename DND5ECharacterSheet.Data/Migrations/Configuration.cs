@@ -186,6 +186,7 @@
 
             context.Weapons.AddOrUpdate(
                 wea => wea.Id,
+                // SIMPLE MELEE WEAPONS
                 new Weapon
                 (
                     "Club",
@@ -199,8 +200,45 @@
                     true, // MELEE
                     "Light" // PROPERTIES
                 ),
-                new Weapon("Dagger", 2, 1, 2, 1, 4, 1, false, true, "Light")
-            // the rest of the weapon seeding goes here when you finish making the weapon/armour crud or if you are being a lazy bum who should get back to work instead of slacking off or sleeping on the job wow how lazy can you really get
+                new Weapon("Dagger", 2, 1, 2, 1, 4, 1, false, true, "Light"),
+                new Weapon("Greatclub", 10, 2, 2, 1, 8, 1, false, true, "Two-Handed"),
+                new Weapon("Handaxe", 2, 5, 4, 1, 6, 3, false, true, "Light, Thrown (20/60)"),
+                new Weapon("Javelin", 2, 5, 4, 1, 6, 2, false, true, "Thrown (30, 120)"),
+                new Weapon("Light Hammer", 2, 2, 4, 1, 4, 1, false, true, "Light, Thrown (20/60)"),
+                new Weapon("Mace", 4, 5, 4, 1, 6, 1, false, true, null),
+                new Weapon("Quarterstaff", 4, 2, 2, 1, 6, 1, false, true, "Versatile (1d8)"),
+                new Weapon("Sickle", 2, 1, 4, 1, 4, 3, false, true, "Light"),
+                new Weapon("Spear", 3, 1, 4, 1, 6, 2, false, true, "Thrown (20/60), Versatile (1d8)"),
+                // SIMPLE RANGED WEAPONS
+                new Weapon("Light Crossbow", 5, 25, 4, 1, 8, 2, false, false, "Ammunition (80/320), Loading, Two-Handed"),
+                new Weapon("Dart", 1, 5, 1, 1, 4, 2, false, false, "Finesse, Thrown (20/60)"),
+                new Weapon("Shortbow", 2, 25, 4, 1, 6, 2, false, false, "Annumition (80/320), Two-Handed"),
+                new Weapon("Sling", 0, 1, 2, 1, 4, 1, false, false, "Ammunition (30/120)"),
+                // MARTIAL MELEE WEAPONS
+                new Weapon("Battleaxe", 4, 10, 4, 1, 8, 3, true, true, "Versatile (1d10)"),
+                new Weapon("Flail", 2, 10, 4, 1, 8, 1, true, true, null),
+                new Weapon("Glaive", 6, 20, 4, 1, 10, 3, true, true, "Heavy, Reach, Two-Handed"),
+                new Weapon("Greataxe", 7, 30, 4, 1, 12, 3, true, true, "Heavy, Two-Handed"),
+                new Weapon("Greatsword", 6, 50, 4, 2, 6, 3, true, true, "Heavy, Two-Handed"),
+                new Weapon("Halberd", 6, 20, 4, 1, 10, 3, true, true, "Heavy, Reach, Two-Handed"),
+                new Weapon("Lance", 6, 10, 4, 1, 12, 2, true, true, "Reach, Special"),
+                new Weapon("Longsword", 3, 15, 4, 1, 8, 3, true, true, "Versatile (1d10)"),
+                new Weapon("Maul", 10, 10, 4, 1, 6, 1, true, true, "Heavy, Two-Handed"),
+                new Weapon("Morningstar", 4, 15, 4, 1, 8, 2, true, true, null),
+                new Weapon("Pike", 18, 5, 4, 1, 10, 2, true, true, "Heavy, Reach, Two-Handed"),
+                new Weapon("Rapier", 2, 25, 4, 1, 8, 2, true, true, "Finesse"),
+                new Weapon("Scimitar", 3, 25, 4, 1, 6, 3, true, true, "Finesse, Light"),
+                new Weapon("Shortsword", 2, 10, 4, 1, 6, 2, true, true, "Finesse, Light"),
+                new Weapon("Trident", 4, 5, 4, 1, 6, 2, true, true, "Thrown (20/60), Versatile (1d8)"),
+                new Weapon("War Pick", 2, 5, 4, 1, 8, 2, true, true, null),
+                new Weapon("Warhammer", 2, 15, 4, 1, 8, 1, true, true, "Versatile (1d10)"),
+                new Weapon("Whip", 3, 2, 4, 1, 4, 3, true, true, "Finesse, Reach"),
+                // MARTIAL RANGED WEAPONS
+                new Weapon("Blowgun", 1, 10, 4, 0, 1, 2, true, false, "Ammunition (25/100), Loading"),
+                new Weapon("Hand Crossbow", 3, 75, 4, 1, 6, 2, true, false, "Ammunition (30/120), Light, Loading"),
+                new Weapon("Heavy Crossbow", 2, 50, 4, 1, 10, 2, true, false, "Ammunition (100/400), Heavy, Loading, Two-Handed"),
+                new Weapon("Longbow", 2, 50, 4, 1, 8, 2, true, false, "Ammunition (150/600), Heavy, Two-Handed"),
+                new Weapon("Net", 3, 1, 4, 0, 0, 1, true, false, "Special, Thrown (5, 15)")
             );
 
 

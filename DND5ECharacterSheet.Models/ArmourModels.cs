@@ -66,6 +66,7 @@ namespace DND5ECharacterSheet.Models
 
     public class ArmourDetails
     {
+        public int ArmourId { get; set; }
         public string Name { get; set; }
 
         public int WeightInPounds { get; set; }

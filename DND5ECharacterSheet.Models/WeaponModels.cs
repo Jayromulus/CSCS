@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DND5ECharacterSheet.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -43,6 +44,8 @@ namespace DND5ECharacterSheet.Models
     }
     public class WeaponEdit
     {
+        public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
 
@@ -64,7 +67,7 @@ namespace DND5ECharacterSheet.Models
         public int DamageDieSize { get; set; }
 
         [Required]
-        public int DamageTypeEnumIndex { get; set; }
+        public DamageTypes DamageType { get; set; }
 
         [Required]
         public bool IsMartialWeapon { get; set; }
@@ -77,6 +80,7 @@ namespace DND5ECharacterSheet.Models
     }
     public class WeaponDetails
     {
+        public int WeaponId { get; set; }
         [Required]
         public string Name { get; set; }
 
@@ -89,7 +93,7 @@ namespace DND5ECharacterSheet.Models
 
         [Required]
         [Display(Name = "Currency")]
-        public int CurrencyEnumIndex { get; set; }
+        public Currency CurrencyRequired { get; set; }
 
         [Required]
         public int DamageDieAmount { get; set; }
@@ -98,7 +102,7 @@ namespace DND5ECharacterSheet.Models
         public int DamageDieSize { get; set; }
 
         [Required]
-        public int DamageTypeEnumIndex { get; set; }
+        public DamageTypes DamageType { get; set; }
 
         [Required]
         public bool IsMartialWeapon { get; set; }
@@ -111,6 +115,8 @@ namespace DND5ECharacterSheet.Models
     }
     public class WeaponListItem
     {
+        public int WeaponId { get; set; }
+
         [Required]
         public string Name { get; set; }
 
@@ -120,7 +126,7 @@ namespace DND5ECharacterSheet.Models
 
         [Required]
         [Display(Name = "Currency")]
-        public int CurrencyEnumIndex { get; set; }
+        public Currency CurrencyRequired { get; set; }
 
         [Required]
         public bool IsMartialWeapon { get; set; }
