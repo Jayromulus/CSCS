@@ -8,7 +8,7 @@
 .navbar-color {
     /*background: rgb(255,171,113);
     background: linear-gradient(127deg, rgba(34,34,255,.95) 0%, rgba(28,28,28,.95) 25%, rgba(22,22,22,.95) 100%);*/
-    background-color: #292725;
+    background-color: #222222;
     color: white;
 }
 
@@ -19,6 +19,7 @@
     background: #f05a28;
     background: linear-gradient(127deg, #f05a28 0%, #f7931e 95%);
     color: white;
+    border-radius: 5px;
 }
 
 a {
@@ -31,21 +32,34 @@ a:hover {
     text-decoration: underline;
 }
 
-.details-height{
-    line-height: 12.5vh;
+.details-height {
+    line-height: 15vh;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
     .details-height {
-        line-height: 10vh
+        line-height: 12.5vh
+    }
+
+    .prof-padding{
+        margin-bottom: 1.5%
     }
 }
+
+th {
+    text-align: center;
+}
+
+.prof-padding {
+    padding: .5% 2.5%
+}
+
 
 
 /* SCROLLBAR */
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
 }
 
 /* Track */
@@ -59,10 +73,10 @@ a:hover {
     border-radius: 5px
 }
 
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
 
 /*

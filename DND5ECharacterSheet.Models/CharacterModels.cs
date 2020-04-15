@@ -111,11 +111,17 @@ namespace DND5ECharacterSheet.Models
         public int CurrentHitPoints { get; set; }
         public int TemporaryHitPoints { get; set; }
 
+        [Display(Name = "Str Save")]
         public int StrengthSave { get; set; }
+        [Display(Name = "Dex Save")]
         public int DexteritySave { get; set; }
+        [Display(Name = "Con Save")]
         public int ConstitutionSave { get; set; }
+        [Display(Name = "Int Save")]
         public int IntelligenceSave { get; set; }
+        [Display(Name = "Wis Save")]
         public int WisdomSave { get; set; }
+        [Display(Name = "Cha Save")]
         public int CharismaSave { get; set; }
         public string LightArmour { get; set; }
         public string MediumArmour { get; set; }
