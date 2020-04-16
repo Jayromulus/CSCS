@@ -372,7 +372,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\" />
+    <Folder Include="Content\Assets\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

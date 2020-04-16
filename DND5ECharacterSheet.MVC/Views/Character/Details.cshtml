@@ -228,6 +228,24 @@
                 </div>
             </div>
         </div>
+
+        <div class="row" style="padding: 2%; margin-bottom: 1.5%">
+            @if (Model.User.Id == ViewBag.CurrentUser)
+            {
+                <div class="col-xs-6" style="padding: 0">
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning", type = "button" })
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6">
+                    
+                </div>
+            }
+            <div class="col-xs-6" style="text-align: right; padding: 0">
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success", type = "button" })
+            </div>
+        </div>
     </div>
 </div>
 @*<p>

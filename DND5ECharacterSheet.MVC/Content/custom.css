@@ -1,5 +1,6 @@
 ﻿body {
     background-color: #555;
+    color: white;
     /*background: rgb(236,78,32);
     background: linear-gradient(127deg, rgb(122,51,171) 0%, rgb(212,61,181) 65%, rgb(244,71,191) 100%);*/
     /*background: linear-gradient(127deg, rgb(236,78,32) 0%, rgb(236,98,52) 65%, rgb(236,118,72) 100%);*/
@@ -54,7 +55,11 @@ th {
     padding: .5% 2.5%
 }
 
-
+.jumbotron {
+    background-image: url('Assets/DnD_PHB_Art2.jpg');
+    background-position-x: 85%;
+    background-repeat:no-repeat;
+}
 
 /* SCROLLBAR */
 /* width */

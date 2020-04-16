@@ -122,6 +122,9 @@ namespace DND5ECharacterSheet.MVC.Controllers
                 return HttpNotFound();
             }
 
+            var CurrentUserId = User.Identity.GetUserId();
+            ViewBag.CurrentUser = CurrentUserId;
+
             return View(character);
         }
 

@@ -2,30 +2,31 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="jumbotron" style="border-radius: 0 0 5px 5px;">
+<div style="height: 17.5vh"></div>
+<div class="row">
+    <div class="col-xs-6">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "btn btn-default" })</div>
+    <div class="col-xs-6" style="text-align: right">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "btn btn-default" })</div>
+</div>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Create Your Character</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Using our relatively straightforward CSCC&trade; (C# Character Creation) you can create and track a character by inputting the most basic of information and letting our patented formulas to extrapolate the rest of your character's stats for you. Your character will then be visible to the public, so feel free to share it with your friends. Don't worry, only the person who made a character can make changes to them so you will not need to be scared of strangers tweaking your creation.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p class="btn" style="background: black; background: linear-gradient(127deg, rgba(22,22,22,1) 0%, rgba(28,28,28,1) 85%, rgba(34,34,26341) 100%);">@Html.ActionLink("Create Your Own! »", "Index", "Character")</p>
+        @*&raquo;*@
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Explore Our Armours</h2>
+        <p>We have supplied a range of armours that can be found within the players handbook for 5th edition Dungeons and Dragons, but you may have times where this is simply not enough. Because of the need of custom tools and our willingness to allow players to express versatility, you can also add your own armours to our "shop" so that other players may explore and play with you. Only the original "smith" of the armour may tinker with it's properties, so you needn't worry about any 'forge'ry.</p>
+        <p class="btn" style="background: linear-gradient(127deg, rgba(22,22,22,1) 0%, rgba(28,28,28,1) 85%, rgba(34,34,26341) 100%);">@Html.ActionLink("Try some on! »", "Index", "Armour")</p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Smith and Weapons</h2>
+        <p>Not quite the manufacturer but we have made plenty of weapons that your character can look through to find the perfect fit for their cause. We have once again supplied information for everything that is within the 5th editiion Dungeons and Dragons players handbook while giving you all the freedom to add and edit items of your own creation. We inscribe special runes onto our blades to ensure continuity of the smith's work</p>
+        <p class="btn" style="background: linear-gradient(127deg, rgba(22,22,22,1) 0%, rgba(28,28,28,1) 85%, rgba(34,34,26341) 100%);">@Html.ActionLink("Roll for crafting! »", "Index", "Weapon")</p>
     </div>
 </div>

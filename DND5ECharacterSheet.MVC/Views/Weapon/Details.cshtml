@@ -4,79 +4,91 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>WeaponDetails</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    <div id="main" style="display:contents">
+        <div class="row" style="margin-top: 2%; padding: 2.5% 5%">
+            <div class=" card-background col-xs-12 col-sm-6 col-sm-offset-3" style="margin-bottom: 2%; padding: 0 5%">
+                <div class="row">
+                    <div class="col-xs-6">
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                        <h3>
+                            @Html.DisplayFor(model => model.Name)
+                        </h3>
+                    </div>
+                    <div class="col-xs-6" style="text-align: right">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.WeightInPounds)
-        </dt>
+                        <h3>
+                            @Html.DisplayFor(model => model.CostInCurrency) @Html.DisplayFor(model => model.CurrencyRequired)
+                        </h3>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.WeightInPounds)
-        </dd>
+                    <div class="col-xs-12" style="text-align: center">
+                        <h3>
+                            Damage: @Html.DisplayFor(model => model.DamageDieAmount)<span>d</span>@Html.DisplayFor(model => model.DamageDieSize) @Html.DisplayFor(model => model.DamageType)
+                        </h3>
+                    </div>
+                    <div class="col-xs-12">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CostInCurrency)
-        </dt>
+                        @if (Model.Properties != null)
+                        {
+                            <h3>
+                                Properties: @Html.DisplayFor(model => model.Properties)
+                            </h3>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
 
-        <dd>
-            @Html.DisplayFor(model => model.CostInCurrency)
-        </dd>
+                        <h3>
+                            @Html.DisplayFor(model => model.WeightInPounds) lb.
+                        </h3>
+                    </div>
+                    <div class="col-xs-6" style="text-align: right">
+                        @if (Model.IsMartialWeapon)
+                        {
+                            <h3 style="display: inline">
+                                Martial
+                            </h3>
+                        }
+                        else
+                        {
+                            <h3 style="display: inline">
+                                Simple
+                            </h3>
+                        }
+                        @if (Model.IsMeleeWeapon)
+                        {
+                            <h3 style="display: inline">
+                                Melee Weapon
+                            </h3>
+                        }
+                        else
+                        {
+                            <h3 style="display: inline">
+                                Ranged Weapon
+                            </h3>
+                        }
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DamageDieAmount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DamageDieAmount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DamageDieSize)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DamageDieSize)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsMartialWeapon)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsMartialWeapon)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsMeleeWeapon)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsMeleeWeapon)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Properties)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Properties)
-        </dd>
-
-    </dl>
+                <div class="row" style="padding: 2%; margin-bottom: 1.5%">
+                    @if (Model.WeaponId > 37)
+                    {
+                        <div class="col-xs-6" style="padding: 0">
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.WeaponId }, new { @class = "btn btn-warning", type = "button" })
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-xs-6"></div>
+                    }
+                    <div class="col-xs-6" style="text-align: right; padding: 0">
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success", type = "button" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.WeaponId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
