@@ -29,12 +29,17 @@ a {
 }
 
 a:hover {
-    color: lightgray;
+    color: #ccc;
     text-decoration: underline;
 }
 
 .details-height {
     line-height: 15vh;
+}
+
+
+.characterHeightThing {
+    line-height: 8.5vh
 }
 
 @media only screen and (max-width: 768px) {
@@ -44,6 +49,9 @@ a:hover {
 
     .prof-padding{
         margin-bottom: 1.5%
+    }
+    .characterHeightThing {
+        line-height: 5vh
     }
 }
 
@@ -56,10 +64,13 @@ th {
 }
 
 .jumbotron {
-    background-image: url('Assets/DnD_PHB_Art2.jpg');
-    background-position-x: 85%;
-    background-repeat:no-repeat;
+    background-image: url('Assets/keyart.jpg');
+    background-position-x: right;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 /* SCROLLBAR */
 /* width */
@@ -80,7 +91,7 @@ th {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #ccc;
 }
 
 
